@@ -1,0 +1,19 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+canvas,
+img,
+video {
+  max-width: 100%;
+}
+
+.employee-data .employee-data_description {
+  display: none;
+}
+
+.employee-data:hover .employee-data_description {
+  display: block;
+}

@@ -1,0 +1,10 @@
+.employee-data {
+  .employee-data_description {
+    display: none;
+  }
+  &:hover {
+    .employee-data_description {
+    display: block;
+    }
+  }
+}

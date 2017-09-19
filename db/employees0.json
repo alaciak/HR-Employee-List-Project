@@ -1,0 +1,104 @@
+{
+  "employees": [
+    {
+      "id": 1,
+      "firstname": "Anna",
+      "lastname": "Kowalska",
+      "position": "Admin",
+      "role": "Admin",
+      "experience": 24,
+      "shortdescript": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "longdescript": "Sed vulputate molestie tellus vel vehicula. Nulla at mi mauris. In dui erat, viverra in tincidunt non, convallis et turpis."
+    },
+    {
+      "id": 2,
+      "firstname": "Jan",
+      "lastname": "Kowalski",
+      "position": "Developer",
+      "role": "Admin",
+      "experience": 36,
+      "shortdescript": "Proin elementum consequat leo et pulvinar.",
+      "longdescript": "Duis in velit id ante fermentum consectetur ac non ex. Nunc eu fermentum enim, vitae ornare ante."
+    },
+    {
+      "id": 3,
+      "firstname": "Kevin",
+      "lastname": "Smith",
+      "position": "Manager",
+      "role": "User",
+      "experience": 16,
+      "shortdescript": "Aliquam nulla purus, commodo eget viverra.",
+      "longdescript": "Nulla sagittis vehicula imperdiet. Nullam in eros pellentesque, blandit quam mattis, sollicitudin ligula."
+    },
+    {
+      "id": 4,
+      "firstname": "Stuart",
+      "lastname": "Smith",
+      "position": "Tester",
+      "role": "User",
+      "experience": 22,
+      "shortdescript": "Etiam iaculis, libero in volutpat fermentum.",
+      "longdescript": "Cras justo elit, tristique vitae posuere a, blandit eu nunc. Cras arcu diam, consequat vel enim id, ullamcorper accumsan ex."
+    },
+    {
+      "id": 5,
+      "firstname": "Piotr",
+      "lastname": "Wyczesany",
+      "position": "Developer",
+      "role": "Admin",
+      "experience": 30,
+      "shortdescript": "Nulla posuere ante sit amet nibh consectetur.",
+      "longdescript": "Etiam mattis urna nisl, a imperdiet orci imperdiet euismod. Suspendisse facilisis, libero pellentesque malesuada ultricies, dui urna elementum quam."
+    },
+    {
+      "id": 6,
+      "firstname": "Anna",
+      "lastname": "Łaciak",
+      "position": "Developer",
+      "role": "User",
+      "experience": 2,
+      "shortdescript": "Ut maximus nibh a est rhoncus, id feugiat tortor tristique.",
+      "longdescript": "Nunc pellentesque sem sapien, eget pellentesque leo luctus et. Sed feugiat viverra sem quis egestas. Curabitur accumsan mattis leo, semper ultricies lacus ornare vitaem."
+    },
+    {
+      "id": 7,
+      "firstname": "James",
+      "lastname": "Błąd",
+      "position": "HR",
+      "role": "User",
+      "experience": 12,
+      "shortdescript": "Nulla lacus erat, dictum pharetra tortor.",
+      "longdescript": "Duis eget massa elit. Nulla sit amet ligula commodo enim cursus blandit."
+    },
+    {
+      "id": 8,
+      "firstname": "Harry",
+      "lastname": "Portfel",
+      "position": "Tester",
+      "role": "User",
+      "experience": 24,
+      "shortdescript": "Proin consectetur euismod malesuada.",
+      "longdescript": "Donec vehicula turpis diam, vitae sodales odio faucibus vel. Mauris bibendum efficitur libero, non rutrum tortor varius sed."
+    },
+    {
+      "id": 9,
+      "firstname": "Stuart",
+      "lastname": "Little",
+      "position": "Manager",
+      "role": "User",
+      "experience": 13,
+      "shortdescript": "Nulla pharetra neque sit amet interdum faucibus.",
+      "longdescript": "Aenean viverra lacus maximus, fringilla metus vitae, finibus ante. Morbi leo nisi, laoreet non suscipit et, auctor quis sapien."
+    },
+    {
+      "id": 10,
+      "firstname": "Adam",
+      "lastname": "Nowak",
+      "position": "HR",
+      "role": "User",
+      "experience": 24,
+      "shortdescript": "Mauris arcu risus, tincidunt vel.",
+      "longdescript": "Nunc commodo mauris dui, non ullamcorper neque ullamcorper eget. Sed sollicitudin ac massa et convallis."
+    }
+  ]
+}
