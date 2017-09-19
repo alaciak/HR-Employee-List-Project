@@ -42,13 +42,23 @@
     },
     {
       "id": 5,
-      "firstname": "Piotr",
-      "lastname": "Wyczesany",
+      "firstname": "Maria",
+      "lastname": "Nowak",
       "position": "Developer",
       "role": "Admin",
       "experience": 30,
       "shortdescript": "Nulla posuere ante sit amet nibh consectetur.",
       "longdescript": "Etiam mattis urna nisl, a imperdiet orci imperdiet euismod. Suspendisse facilisis, libero pellentesque malesuada ultricies, dui urna elementum quam."
+    },
+    {
+      "id": 6,
+      "firstname": "Anna",
+      "lastname": "Łaciak",
+      "position": "Developer",
+      "role": "User",
+      "experience": 2,
+      "shortdescript": "Ut maximus nibh a est rhoncus, id feugiat tortor tristique.",
+      "longdescript": "Nunc pellentesque sem sapien, eget pellentesque leo luctus et. Sed feugiat viverra sem quis egestas. Curabitur accumsan mattis leo, semper ultricies lacus ornare vitaem."
     },
     {
       "id": 7,
@@ -59,6 +69,16 @@
       "experience": 12,
       "shortdescript": "Nulla lacus erat, dictum pharetra tortor.",
       "longdescript": "Duis eget massa elit. Nulla sit amet ligula commodo enim cursus blandit."
+    },
+    {
+      "id": 8,
+      "firstname": "Harry",
+      "lastname": "Portfel",
+      "position": "Tester",
+      "role": "User",
+      "experience": 24,
+      "shortdescript": "Proin consectetur euismod malesuada.",
+      "longdescript": "Donec vehicula turpis diam, vitae sodales odio faucibus vel. Mauris bibendum efficitur libero, non rutrum tortor varius sed."
     },
     {
       "id": 9,
