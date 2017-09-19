@@ -14,7 +14,8 @@ class EmployeesList extends React.Component {
     fetch('http://localhost:3000/employees').then(r => r.json()).then(data => {
       this.setState({
         employeeList: data,
-        loading: false});
+        loading: false
+      });
     }).catch(function(error) {
       console.log(error);
     });

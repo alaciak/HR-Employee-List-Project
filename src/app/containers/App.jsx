@@ -22,7 +22,7 @@ class App extends React.Component {
           <Main >
             <Switch>
               <Route exact path='/' component={ EmployeesList }/>
-              <Route path='/edit' component={ EmployeeEditForm }/>
+              <Route path='/edit/:id' component={ EmployeeEditForm }/>
             </Switch>
           </Main>
         </Router>

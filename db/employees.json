@@ -42,11 +42,11 @@
     },
     {
       "id": 5,
-      "firstname": "Maria",
-      "lastname": "Nowak",
+      "firstname": "Piotr",
+      "lastname": "Test",
       "position": "Developer",
       "role": "Admin",
-      "experience": 30,
+      "experience": "15",
       "shortdescript": "Nulla posuere ante sit amet nibh consectetur.",
       "longdescript": "Etiam mattis urna nisl, a imperdiet orci imperdiet euismod. Suspendisse facilisis, libero pellentesque malesuada ultricies, dui urna elementum quam."
     },
