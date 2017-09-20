@@ -1,2 +1,27 @@
 $breakpoint: 640px;
 $columns: 12;
+
+$font-family-main: 'Lato', sans-serif;
+
+$background-colors: (
+  header: #1c1b18,
+  table-heading: #3d3a39,
+  table-border: #1c1b18,
+  table-heading-border: #cecccc,
+  table-rows-even:#fcfaf9,
+  table-rows-odd:#d8d5d4,
+  button-save: #c15e07,
+  button-cancel: #c15e07,
+  form-label: #202020,
+  form-input: #279978,
+);
+
+$font-colors: (
+  header: #fff,
+  main: #352c2b,
+  highlight: #a01b0c,
+  table-heading: #fff,
+  table-body: #f7f3f2,
+  form-label: #202020,
+  form-input: #279978,
+);

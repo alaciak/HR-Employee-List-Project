@@ -79,7 +79,7 @@ class EmployeeEditForm extends React.Component {
   }
 
   render() {
-    return <form action='' method='POST'>
+    return <form action='' className='employee-data_edit'>
       <label>First name:
         <input type='text' value={ this.state.firstname } placeholder={ this.state.firstname } disabled ></input>
       </label>
@@ -92,7 +92,7 @@ class EmployeeEditForm extends React.Component {
       <label>Position:
         <input type='text' value={ this.state.position } placeholder={ this.state.position } disabled ></input>
       </label>
-      <label>Experience:
+      <label>Experience (in months):
         <input type='text' value={ this.state.experience } placeholder={ this.state.experience } name='experience' onChange={ this.handleOnChange } ></input>
       </label>
       <label>Short description:

@@ -42,18 +42,26 @@ class EmployeesList extends React.Component {
         return <EmployeeData id={employee.id} key={employee.id} firstname={employee.firstname} lastname={employee.lastname} role={employee.role} experience={employee.experience} shortdescript={employee.shortdescript} onRemoveEmployee={ this.onRemoveEmployee }/>
       });
       return (
-        <table>
-          <thead>
-            <tr>
-              <th>Full Name</th>
-              <th>Role</th>
-              <th>Experience</th>
-            </tr>
-          </thead>
-          <tbody>
-            {employeeData}
-          </tbody>
-        </table>
+        <section className='employee-list'>
+        <div className='row'>
+          <div className='container'>
+            <table className='employee-list_table col-12'>
+              <caption>Employee List</caption>
+              <thead className='employee-list_table-heading'>
+                <tr>
+                  <th>Full Name</th>
+                  <th>Role</th>
+                  <th>Experience</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody className='employee-list_table-body'>
+                {employeeData}
+              </tbody>
+            </table>
+          </div>
+        </div>
+        </section>
       )
     }
   }

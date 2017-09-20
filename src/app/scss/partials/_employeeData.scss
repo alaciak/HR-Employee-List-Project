@@ -1,10 +1,13 @@
 .employee-data {
+  position: relative;
   .employee-data_description {
+    position: absolute;
     display: none;
   }
+
   &:hover {
     .employee-data_description {
-    display: block;
+      display: block;
     }
   }
 }
