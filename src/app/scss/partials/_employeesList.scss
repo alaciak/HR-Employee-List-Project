@@ -19,19 +19,14 @@
     padding: 0.7em;
   }
 
-  td {
-    font-size: .8em;
+  tr {
+    font-size: 0.8em;
     color: map-get($font-colors, main);
     @media (min-width: 480px) {
       font-size: 1em;
     }
     @media (min-width: 768px) {
       font-size: 1.125em;
-    }
-
-    &:not(.employee-data_remove):hover {
-      text-decoration: underline;
-      cursor: pointer;
     }
   }
 
@@ -41,18 +36,24 @@
       font-size: 1.25em;
       font-weight: bold;
     }
-
-    &:hover {
-      cursor: pointer;
-    }
   }
 
   tr:nth-of-type(even) {
     background: map-get($background-colors, table-rows-even);
+
+    &:hover {
+      background: map-get($background-colors, table-rows-highlight);
+      cursor: pointer;
+    }
   }
 
   tr:nth-of-type(odd) {
     background: map-get($background-colors, table-rows-odd);
+
+    &:hover {
+      background: map-get($background-colors, table-rows-highlight);
+      cursor: pointer;
+    }
   }
 
   caption {
@@ -70,7 +71,7 @@
     text-transform: uppercase;
 
     th {
-      font-size: .8em;
+      font-size: 0.8em;
       background: map-get($background-colors, table-heading);
       color: map-get($font-colors, table-heading);
       border-collapse: collapse;

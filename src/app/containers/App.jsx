@@ -1,17 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Main from '../containers/Main.jsx';
+import Main from './Main.jsx';
 import EmployeesList from '../components/EmployeesList.jsx';
 import EmployeeEditForm from '../components/EmployeeEditForm.jsx';
 import '../scss/style.scss';
 import {
   HashRouter as Router,
   Route,
-  Switch }
-  from 'react-router-dom';
-import {
-  IndexRoute,
-} from 'react-router';
+  Switch
+} from 'react-router-dom';
+import { IndexRoute } from 'react-router';
 
 
 class App extends React.Component {

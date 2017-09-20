@@ -6,7 +6,7 @@ module.exports = {
   entry : ['babel-polyfill','whatwg-fetch', './src/app//containers/App.jsx'],
     output : {
         path: __dirname+'/',
-        filename: 'src/app/out.js'
+        filename: 'dist/js/out.js'
     },
   devServer: {
     inline: true,
@@ -33,6 +33,6 @@ module.exports = {
     ],
   },
   plugins: [
-    new ExtractTextPlugin("./css/styles.css")
+    new ExtractTextPlugin("./dist/css/styles.css")
   ]
 };
