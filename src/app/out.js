@@ -39284,59 +39284,80 @@ var EmployeeEditForm = function (_React$Component) {
     key: 'render',
     value: function render() {
       return _react2.default.createElement(
-        'form',
-        { action: '', className: 'employee-data_edit' },
+        'section',
+        { className: 'employee-data-form container' },
         _react2.default.createElement(
-          'label',
-          null,
-          'First name:',
-          _react2.default.createElement('input', { type: 'text', value: this.state.firstname, placeholder: this.state.firstname, disabled: true })
-        ),
-        _react2.default.createElement(
-          'label',
-          null,
-          'Last name:',
-          _react2.default.createElement('input', { type: 'text', value: this.state.lastname, placeholder: this.state.lastname, disabled: true })
-        ),
-        _react2.default.createElement(
-          'label',
-          null,
-          'Role:',
-          _react2.default.createElement('input', { type: 'text', value: this.state.role, placeholder: this.state.role, disabled: true })
-        ),
-        _react2.default.createElement(
-          'label',
-          null,
-          'Position:',
-          _react2.default.createElement('input', { type: 'text', value: this.state.position, placeholder: this.state.position, disabled: true })
-        ),
-        _react2.default.createElement(
-          'label',
-          null,
-          'Experience (in months):',
-          _react2.default.createElement('input', { type: 'text', value: this.state.experience, placeholder: this.state.experience, name: 'experience', onChange: this.handleOnChange })
-        ),
-        _react2.default.createElement(
-          'label',
-          null,
-          'Short description:',
-          _react2.default.createElement('input', { type: 'text', value: this.state.shortdescript, placeholder: this.state.shortdescript, name: 'shortdescript', onChange: this.handleOnChange })
-        ),
-        _react2.default.createElement(
-          'label',
-          null,
-          'Long description:',
-          _react2.default.createElement('input', { type: 'text', value: this.state.longdescript, placeholder: this.state.longdescript, name: 'longdescript', onChange: this.handleOnChange })
-        ),
-        _react2.default.createElement(
-          'button',
-          { type: 'button', onClick: this.handleonClickUpdate },
-          'SAVE'
-        ),
-        _react2.default.createElement(
-          'button',
-          { type: 'button', onClick: this.handleOnClickCancel },
-          'CANCEL'
+          'div',
+          { className: 'row' },
+          _react2.default.createElement(
+            'form',
+            { action: '', name: 'employee-data', className: 'employee-data-form_edit col-12' },
+            _react2.default.createElement(
+              'fieldset',
+              null,
+              _react2.default.createElement(
+                'legend',
+                null,
+                'Employee Data'
+              ),
+              _react2.default.createElement(
+                'label',
+                { className: 'employee-data-form_edit-label' },
+                'First name:',
+                _react2.default.createElement('input', { type: 'text', value: this.state.firstname, placeholder: this.state.firstname, disabled: true })
+              ),
+              _react2.default.createElement(
+                'label',
+                { className: 'employee-data-form_edit-label' },
+                'Last name:',
+                _react2.default.createElement('input', { type: 'text', value: this.state.lastname, placeholder: this.state.lastname, disabled: true })
+              ),
+              _react2.default.createElement(
+                'label',
+                { className: 'employee-data-form_edit-label' },
+                'Role:',
+                _react2.default.createElement('input', { type: 'text', value: this.state.role, placeholder: this.state.role, disabled: true })
+              ),
+              _react2.default.createElement(
+                'label',
+                { className: 'employee-data-form_edit-label' },
+                'Position:',
+                _react2.default.createElement('input', { type: 'text', value: this.state.position, placeholder: this.state.position, disabled: true })
+              ),
+              _react2.default.createElement(
+                'label',
+                { className: 'employee-data-form_edit-label' },
+                'Experience (in months):',
+                _react2.default.createElement('input', { type: 'text', value: this.state.experience, placeholder: this.state.experience, name: 'experience', onChange: this.handleOnChange })
+              ),
+              _react2.default.createElement(
+                'label',
+                { className: 'employee-data-form_edit-label' },
+                'Short description:',
+                _react2.default.createElement('textarea', { className: 'employee-data-form_edit-description', type: 'text', value: this.state.shortdescript, placeholder: this.state.shortdescript, name: 'shortdescript', onChange: this.handleOnChange })
+              ),
+              _react2.default.createElement(
+                'label',
+                { className: 'employee-data-form_edit-label' },
+                'Long description:',
+                _react2.default.createElement('textarea', { className: 'employee-data-form_edit-description', type: 'text', value: this.state.longdescript, placeholder: this.state.longdescript, name: 'longdescript', onChange: this.handleOnChange })
+              )
+            )
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'row employee-data-form_buttons' },
+            _react2.default.createElement(
+              'button',
+              { className: 'btn btn-save', type: 'button', onClick: this.handleonClickUpdate },
+              'SAVE'
+            ),
+            _react2.default.createElement(
+              'button',
+              { className: 'btn btn-cancel', type: 'button', onClick: this.handleOnClickCancel },
+              'CANCEL'
+            )
+          )
         )
       );
     }

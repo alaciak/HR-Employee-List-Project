@@ -94,8 +94,8 @@ video {
 }
 
 .navigation {
-  height: 3.5em;
-  padding: .7em;
+  min-height: 3.5em;
+  padding: 0.7em;
   width: 100%;
   background: #1c1b18;
   color: #fff;
@@ -103,7 +103,7 @@ video {
 
 .navigation .navigation-logo {
   font-size: 1.25rem;
-  word-spacing: .5em;
+  word-spacing: 0.5em;
 }
 
 .navigation .navigation-logo span {
@@ -126,18 +126,97 @@ video {
 .employee-data .employee-data_description {
   position: absolute;
   display: none;
+  text-align: center;
+  width: 12.5em;
+  height: 5em;
+  border: 1px solid #3d3a39;
+  border-radius: 10px;
+  margin-left: 1em;
+  background: #fcfaf9;
+}
+
+.employee-data .employee-data_description::after {
+  content: "";
+  border-top: 0.5em solid transparent;
+  border-bottom: 0.5em solid transparent;
+  border-right: 0.7em solid #3d3a39;
+  position: absolute;
+  top: 0.25em;
+  left: -.7em;
 }
 
 .employee-data:hover .employee-data_description {
   display: block;
 }
 
-.employee-data_edit input {
-  display: block;
+.employee-data-form {
+  padding: 2em;
+}
+
+.employee-data-form .employee-data-form_edit fieldset {
+  width: 75%;
+  padding: 1em 2em;
+  border: 1px solid #3d3a39;
+}
+
+.employee-data-form .employee-data-form_edit legend {
+  color: #a01b0c;
+  font-size: 2em;
+  font-weight: bold;
+  margin-bottom: 0.7em;
+}
+
+.employee-data-form .employee-data-form_edit .employee-data-form_edit-label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.125em;
+  color: #352c2b;
+  padding: 0.5em;
+}
+
+.employee-data-form .employee-data-form_edit input,
+.employee-data-form .employee-data-form_edit textarea {
+  width: 60%;
+  padding: 0.5em;
+}
+
+.employee-data-form .employee-data-form_edit .employee-data-form_edit-description {
+  height: 5em;
+}
+
+.employee-data-form .employee-data-form_buttons {
+  width: 75%;
+  display: flex;
+  justify-content: center;
+}
+
+.employee-data-form .employee-data-form_buttons .btn {
+  margin: 1em 0.7em;
+  border: none;
+  border-radius: 5px;
+  min-width: 15%;
+  min-height: 2em;
+  text-align: center;
+  font-size: 1.25em;
+  padding: .5em;
+  color: #fff;
+}
+
+.employee-data-form .employee-data-form_buttons .btn:hover {
+  cursor: pointer;
+}
+
+.employee-data-form .employee-data-form_buttons .btn-save {
+  background: #c15e07;
+}
+
+.employee-data-form .employee-data-form_buttons .btn-cancel {
+  background: #202020;
 }
 
 .employee-list_table {
-  width: 75%;
+  width: 80%;
   margin-top: 1.5em;
   border: 1px solid #cecccc;
   -moz-box-shadow: inset 0 0 5px #888888;
@@ -149,7 +228,7 @@ video {
 .employee-list_table table,
 .employee-list_table td,
 .employee-list_table th {
-  padding: .7em;
+  padding: 0.7em;
 }
 
 .employee-list_table td {
@@ -185,7 +264,7 @@ video {
   color: #a01b0c;
   padding: 1.25em 0;
   text-align: left;
-  font-weight: bold;
+  font-weight: 900;
 }
 
 .employee-list_table .employee-list_table-heading {

@@ -1,26 +1,33 @@
 .employee-list_table {
-  width: 75%;
+  width: 80%;
   margin-top: 1.5em;
   border: 1px solid map-get($background-colors, table-heading-border);
   -moz-box-shadow: inset 0 0 5px #888888;
   -webkit-box-shadow: inset 0 0 5px #888888;
   box-shadow: inset 0 0 5px #888888;
   text-align: center;
-  table, td, th {
-      padding: .7em;
+
+  table,
+  td,
+  th {
+    padding: 0.7em;
   }
+
   td {
     font-size: 1.125em;
     color: map-get($font-colors, main);
+
     &:not(.employee-data_remove):hover {
       text-decoration: underline;
       cursor: pointer;
     }
   }
+
   .employee-data_remove {
     color: map-get($font-colors, highlight);
     font-size: 1.25em;
     font-weight: bold;
+
     &:hover {
       cursor: pointer;
     }
@@ -29,18 +36,22 @@
   tr:nth-of-type(even) {
     background: map-get($background-colors, table-rows-even);
   }
+
   tr:nth-of-type(odd) {
-    background: map-get($background-colors, table-rows-odd);;
+    background: map-get($background-colors, table-rows-odd);
   }
+
   caption {
     font-size: 2em;
     color: map-get($font-colors, highlight);
     padding: 1.25em 0;
     text-align: left;
-    font-weight: bold;
+    font-weight: 900;
   }
+
   .employee-list_table-heading {
     text-transform: uppercase;
+
     th {
       font-size: 1.125em;
       background: map-get($background-colors, table-heading);

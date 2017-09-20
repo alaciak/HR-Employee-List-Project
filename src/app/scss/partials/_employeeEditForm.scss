@@ -1,5 +1,67 @@
-.employee-data_edit {
-  input {
-    display: block;
+.employee-data-form {
+  padding: 2em;
+
+  .employee-data-form_edit {
+    fieldset {
+      width: 75%;
+      padding: 1em 2em;
+      border: 1px solid map-get($background-colors, table-heading);
+    }
+
+    legend {
+      color: map-get($font-colors, highlight);
+      font-size: 2em;
+      font-weight: bold;
+      margin-bottom: 0.7em;
+    }
+
+    .employee-data-form_edit-label {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 1.125em;
+      color: map-get($font-colors, main);
+      padding: 0.5em;
+    }
+
+    input,
+    textarea {
+      width: 60%;
+      padding: 0.5em;
+    }
+
+    .employee-data-form_edit-description {
+      height: 5em;
+    }
+  }
+
+  .employee-data-form_buttons {
+    width: 75%;
+    display: flex;
+    justify-content: center;
+
+    .btn {
+      margin: 1em 0.7em;
+      border: none;
+      border-radius: 5px;
+      min-width: 15%;
+      min-height: 2em;
+      text-align: center;
+      font-size: 1.25em;
+      padding: .5em;
+      color: map-get($font-colors, button);
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    .btn-save {
+      background: map-get($background-colors, button-save);
+    }
+
+    .btn-cancel {
+      background: map-get($background-colors, button-cancel);
+    }
   }
 }

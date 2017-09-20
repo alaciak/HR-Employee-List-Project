@@ -79,31 +79,42 @@ class EmployeeEditForm extends React.Component {
   }
 
   render() {
-    return <form action='' className='employee-data_edit'>
-      <label>First name:
-        <input type='text' value={ this.state.firstname } placeholder={ this.state.firstname } disabled ></input>
-      </label>
-      <label>Last name:
-        <input type='text' value={ this.state.lastname } placeholder={ this.state.lastname } disabled ></input>
-      </label>
-      <label>Role:
-        <input type='text' value={ this.state.role } placeholder={ this.state.role }  disabled ></input>
-      </label>
-      <label>Position:
-        <input type='text' value={ this.state.position } placeholder={ this.state.position } disabled ></input>
-      </label>
-      <label>Experience (in months):
-        <input type='text' value={ this.state.experience } placeholder={ this.state.experience } name='experience' onChange={ this.handleOnChange } ></input>
-      </label>
-      <label>Short description:
-        <input type='text' value={ this.state.shortdescript } placeholder={ this.state.shortdescript } name='shortdescript' onChange={ this.handleOnChange } ></input>
-      </label>
-      <label>Long description:
-        <input type='text' value={ this.state.longdescript } placeholder={ this.state.longdescript } name='longdescript' onChange={ this.handleOnChange } ></input>
-      </label>
-      <button type='button' onClick={ this.handleonClickUpdate }>SAVE</button>
-      <button type='button' onClick={ this.handleOnClickCancel }>CANCEL</button>
-    </form>
+    return (
+      <section className='employee-data-form container'>
+        <div className='row'>
+          <form action='' name='employee-data' className='employee-data-form_edit col-12'>
+            <fieldset>
+              <legend>Employee Data</legend>
+              <label className='employee-data-form_edit-label'>First name:
+                <input type='text' value={ this.state.firstname } placeholder={ this.state.firstname } disabled ></input>
+              </label>
+              <label className='employee-data-form_edit-label'>Last name:
+                <input type='text' value={ this.state.lastname } placeholder={ this.state.lastname } disabled ></input>
+              </label>
+              <label className='employee-data-form_edit-label'>Role:
+                <input type='text' value={ this.state.role } placeholder={ this.state.role }  disabled ></input>
+              </label>
+              <label className='employee-data-form_edit-label'>Position:
+                <input type='text' value={ this.state.position } placeholder={ this.state.position } disabled ></input>
+              </label>
+              <label className='employee-data-form_edit-label'>Experience (in months):
+                <input type='text' value={ this.state.experience } placeholder={ this.state.experience } name='experience' onChange={ this.handleOnChange } ></input>
+              </label>
+              <label className='employee-data-form_edit-label'>Short description:
+                <textarea className='employee-data-form_edit-description' type='text' value={ this.state.shortdescript } placeholder={ this.state.shortdescript } name='shortdescript' onChange={ this.handleOnChange } ></textarea>
+              </label>
+              <label className='employee-data-form_edit-label'>Long description:
+                <textarea className='employee-data-form_edit-description' type='text' value={ this.state.longdescript } placeholder={ this.state.longdescript } name='longdescript' onChange={ this.handleOnChange } ></textarea>
+              </label>
+            </fieldset>
+          </form>
+          <div className='row employee-data-form_buttons'>
+            <button className='btn btn-save' type='button' onClick={ this.handleonClickUpdate }>SAVE</button>
+            <button className='btn btn-cancel'type='button' onClick={ this.handleOnClickCancel }>CANCEL</button>
+          </div>
+        </div>
+      </section>
+    );
   }
 }
 
