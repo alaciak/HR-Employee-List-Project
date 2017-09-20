@@ -36047,15 +36047,15 @@ var EmployeeData = function (_React$Component) {
         ),
         _react2.default.createElement(
           'td',
-          { className: 'employee-data_remove', onClick: this.handleOnClickRemove },
-          'X'
-        ),
-        _react2.default.createElement(
-          'td',
-          { className: 'employee-data employee-data_description' },
+          { className: 'employee-data_remove' },
           _react2.default.createElement(
             'div',
-            null,
+            { onClick: this.handleOnClickRemove },
+            'X'
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'employee-data employee-data_description' },
             this.props.shortdescript
           )
         )

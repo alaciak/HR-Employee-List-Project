@@ -27,16 +27,9 @@ module.exports = {
         test: /\.scss$/,
         use: ExtractTextPlugin.extract({
                  fallback: 'style-loader',
-                 use: ['css-loader', 'resolve-url-loader', 'sass-loader']
+                 use: ['css-loader', 'sass-loader']
              })
-      },
-      {
-            test: /\.jpg$/,
-            loader: 'file-loader',
-            query: {
-                name: '../img/[name].[ext]'
-            }
-        }
+      }
     ],
   },
   plugins: [

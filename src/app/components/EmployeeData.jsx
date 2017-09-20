@@ -30,8 +30,7 @@ class EmployeeData extends React.Component {
           <td>{ this.props.firstname } { this.props.lastname }</td>
           <td>{ this.props.role }</td>
           <td>{ this.props.experience } months</td>
-          <td className='employee-data_remove' onClick={ this.handleOnClickRemove }>X</td>
-          <td className='employee-data employee-data_description'><div>{ this.props.shortdescript }</div></td>
+          <td className='employee-data_remove'><div onClick={ this.handleOnClickRemove }>X</div><div className='employee-data employee-data_description'>{ this.props.shortdescript }</div></td>
       </tr>
       );
     }

@@ -2,25 +2,35 @@
   position: relative;
 
   .employee-data_description {
+    margin-top: 1.5em;
+    margin-left: -6.5em;
     position: absolute;
     display: none;
     text-align: center;
-    width: 12.5em;
-    height: 5em;
+    font-size: .8em;
+    width: 10em;
+    height: 4.5em;
     border: 1px solid map-get($background-colors, table-heading);
     border-radius: 10px;
-    margin-left: 1em;
     background: map-get($background-colors, table-rows-even);
+    @media (min-width: 640px) {
+      width: 11.5em;
+      height: 5em;
+      font-size: 1em;
+    }
+    @media (min-width: 1000px) {
+      width: 12.5em;
+    }
   }
 
   .employee-data_description::after {
     content: "";
-    border-top: 0.5em solid transparent;
-    border-bottom: 0.5em solid transparent;
-    border-right: 0.7em solid map-get($background-colors, table-heading);
+    border-left: 0.5em solid transparent;
+    border-right: 0.5em solid transparent;
+    border-bottom: 0.7em solid map-get($background-colors, table-heading);
     position: absolute;
-    top: 0.25em;
-    left: -.7em;
+    top: -.7em;
+    left: 5.5em;
   }
 
   &:hover {

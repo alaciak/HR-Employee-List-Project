@@ -6,20 +6,43 @@
   color: map-get($font-colors, header);
 
   .navigation-logo {
-    font-size: 1.25rem;
+    font-size: 0.8em;
     word-spacing: 0.5em;
+    @media (min-width: 380px) {
+      font-size: 0.9em;
+    }
+    @media (min-width: 640px) {
+      font-size: 1.25em;
+    }
 
     span {
-      font-size: 1.25rem;
+      font-size: 0.9em;
       color: map-get($font-colors, highlight);
+      @media (min-width: 640px) {
+        font-size: 1.25em;
+      }
     }
   }
 
   .navigation-user {
     float: right;
+    font-size: 0.7em;
+    @media (min-width: 380px) {
+      font-size: 0.9em;
+    }
+    @media (min-width: 640px) {
+      font-size: 1.25em;
+    }
 
     .navigation-user_select {
       margin-left: 1em;
+      font-size: 0.7rem;
+      @media (min-width: 380px) {
+        font-size: 0.9rem;
+      }
+      @media (min-width: 640px) {
+        font-size: 1.25rem;
+      }
     }
   }
 }

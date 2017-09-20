@@ -3,25 +3,37 @@
 
   .employee-data-form_edit {
     fieldset {
-      width: 75%;
-      padding: 1em 2em;
+      width: 100%;
+      padding: 1em;
       border: 1px solid map-get($background-colors, table-heading);
+      @media (min-width: 640px) {
+        padding: 1em 2em;
+      }
+      @media (min-width: 768px) {
+        width: 75%;
+      }
     }
 
     legend {
       color: map-get($font-colors, highlight);
-      font-size: 2em;
+      font-size: 1.5em;
       font-weight: bold;
       margin-bottom: 0.7em;
+      @media (min-width: 640px) {
+        font-size: 2em;
+      }
     }
 
     .employee-data-form_edit-label {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      font-size: 1.125em;
+      font-size: 1em;
       color: map-get($font-colors, main);
       padding: 0.5em;
+      @media (min-width: 640px) {
+        font-size: 1.125em;
+      }
     }
 
     input,
@@ -31,25 +43,33 @@
     }
 
     .employee-data-form_edit-description {
-      height: 5em;
+      min-height: 6em;
     }
   }
 
   .employee-data-form_buttons {
-    width: 75%;
+    width: 100%;
     display: flex;
     justify-content: center;
+    @media (min-width: 768px) {
+      width: 75%;
+    }
 
     .btn {
       margin: 1em 0.7em;
       border: none;
       border-radius: 5px;
       min-width: 15%;
-      min-height: 2em;
+      min-height: 1.5em;
       text-align: center;
-      font-size: 1.25em;
-      padding: .5em;
+      font-size: 1em;
+      padding: 0.5em;
       color: map-get($font-colors, button);
+      @media (min-width: 640px) {
+        min-height: 2em;
+        text-align: center;
+        font-size: 1.25em;
+      }
 
       &:hover {
         cursor: pointer;

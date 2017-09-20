@@ -6,7 +6,6 @@
   "dependencies": {
     "babel-polyfill": "^6.26.0",
     "babel-runtime": "^6.26.0",
-    "postcss-loader": "^2.0.6",
     "prop-types": "^15.5.10",
     "react": "^15.4.0",
     "react-alert": "^2.2.0",

@@ -6,18 +6,10 @@
   .row {
     @extend %clearfix;
     width: 100%;
-
-    [class*='col'] {
-      width: 100%;
-
-    }
-
-    @media (min-width: $breakpoint) {
-      @for $i from 1 through $columns {
-        .col-#{$i} {
-          float: left;
-          width: 100% / $columns * $i;
-        }
+    @for $i from 1 through $columns {
+      .col-#{$i} {
+        float: left;
+        width: 100% / $columns * $i;
       }
     }
   }
