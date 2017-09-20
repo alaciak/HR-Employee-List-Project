@@ -133,8 +133,11 @@ video {
   padding: 2em; }
   .employee-data-form .employee-data-form_edit fieldset {
     width: 100%;
-    padding: 1em 2em;
+    padding: 1em;
     border: 1px solid #3d3a39; }
+    @media (min-width: 640px) {
+      .employee-data-form .employee-data-form_edit fieldset {
+        padding: 1em 2em; } }
     @media (min-width: 768px) {
       .employee-data-form .employee-data-form_edit fieldset {
         width: 75%; } }
@@ -174,11 +177,16 @@ video {
       border: none;
       border-radius: 5px;
       min-width: 15%;
-      min-height: 2em;
+      min-height: 1.5em;
       text-align: center;
-      font-size: 1.25em;
-      padding: .5em;
+      font-size: 1em;
+      padding: 0.5em;
       color: #fff; }
+      @media (min-width: 640px) {
+        .employee-data-form .employee-data-form_buttons .btn {
+          min-height: 2em;
+          text-align: center;
+          font-size: 1.25em; } }
       .employee-data-form .employee-data-form_buttons .btn:hover {
         cursor: pointer; }
     .employee-data-form .employee-data-form_buttons .btn-save {
