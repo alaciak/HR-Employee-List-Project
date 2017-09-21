@@ -35911,7 +35911,7 @@ var EmployeesList = function (_React$Component) {
         return null;
       } else {
         var employeeData = this.state.employeeList.map(function (employee) {
-          return _react2.default.createElement(_EmployeeData2.default, { id: employee.id, key: employee.id, firstname: employee.firstname, lastname: employee.lastname, role: employee.role, experience: employee.experience, shortdescript: employee.shortdescript, onRemoveEmployee: _this3.onRemoveEmployee });
+          return _react2.default.createElement(_EmployeeData2.default, { employee: employee, onRemoveEmployee: _this3.onRemoveEmployee });
         });
         return _react2.default.createElement(
           'section',
@@ -36008,13 +36008,14 @@ var EmployeeData = function (_React$Component) {
     var _this = _possibleConstructorReturn(this, (EmployeeData.__proto__ || Object.getPrototypeOf(EmployeeData)).call(this, props));
 
     _this.handleOnClickEdit = function (e) {
-      _this.props.history.push('/edit/' + _this.props.id);
+      e.stopPropagation();
+      _this.props.history.push('/edit/' + _this.props.employee.id);
     };
 
     _this.handleOnClickRemove = function (e) {
       e.stopPropagation();
       if (typeof _this.props.onRemoveEmployee === 'function') {
-        _this.props.onRemoveEmployee(_this.props.id);
+        _this.props.onRemoveEmployee(_this.props.employee.id);
       }
     };
 
@@ -36026,24 +36027,24 @@ var EmployeeData = function (_React$Component) {
     value: function render() {
       return _react2.default.createElement(
         'tr',
-        { id: this.props.id, key: this.props.id, className: 'employee-data', onClick: this.handleOnClickEdit },
+        { id: this.props.employee.id, key: this.props.employee.id, className: 'employee-data', onClick: this.handleOnClickEdit },
         _react2.default.createElement(
           'td',
           null,
-          this.props.firstname,
+          this.props.employee.firstname,
           ' ',
-          this.props.lastname
+          this.props.employee.lastname
         ),
         _react2.default.createElement(
           'td',
           null,
-          this.props.role
+          this.props.employee.role
         ),
         _react2.default.createElement(
           'td',
           null,
-          this.props.experience,
-          ' months'
+          this.props.employee.experience,
+          ' month(s)'
         ),
         _react2.default.createElement(
           'td',
@@ -36056,7 +36057,7 @@ var EmployeeData = function (_React$Component) {
           _react2.default.createElement(
             'div',
             { className: 'employee-data employee-data_description' },
-            this.props.shortdescript
+            this.props.employee.shortdescript
           )
         )
       );
@@ -39327,7 +39328,7 @@ var EmployeeEditForm = function (_React$Component) {
               _react2.default.createElement(
                 'label',
                 { className: 'employee-data-form_edit-label' },
-                'Experience (in months):',
+                'Experience (months):',
                 _react2.default.createElement('input', { type: 'text', value: this.state.experience, placeholder: this.state.experience, name: 'experience', onChange: this.handleOnChange })
               ),
               _react2.default.createElement(

@@ -97,7 +97,7 @@ class EmployeeEditForm extends React.Component {
               <label className='employee-data-form_edit-label'>Position:
                 <input type='text' value={ this.state.position } placeholder={ this.state.position } disabled ></input>
               </label>
-              <label className='employee-data-form_edit-label'>Experience (in months):
+              <label className='employee-data-form_edit-label'>Experience (months):
                 <input type='text' value={ this.state.experience } placeholder={ this.state.experience } name='experience' onChange={ this.handleOnChange } ></input>
               </label>
               <label className='employee-data-form_edit-label'>Short description:

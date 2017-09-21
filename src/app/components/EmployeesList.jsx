@@ -38,29 +38,29 @@ class EmployeesList extends React.Component {
     if (this.state.loading) {
       return null;
     } else {
-      let employeeData = this.state.employeeList.map(employee => {
-        return <EmployeeData id={employee.id} key={employee.id} firstname={employee.firstname} lastname={employee.lastname} role={employee.role} experience={employee.experience} shortdescript={employee.shortdescript} onRemoveEmployee={ this.onRemoveEmployee }/>
+      const employeeData = this.state.employeeList.map(employee => {
+        return <EmployeeData employee={ employee } onRemoveEmployee={ this.onRemoveEmployee }/>
       });
       return (
         <section className='employee-list'>
-        <div className='row'>
-          <div className='container'>
-            <table className='employee-list_table col-12'>
-              <caption>Employee List</caption>
-              <thead className='employee-list_table-heading'>
-                <tr>
-                  <th>Full Name</th>
-                  <th>Role</th>
-                  <th>Experience</th>
-                  <th></th>
-                </tr>
-              </thead>
-              <tbody className='employee-list_table-body'>
-                {employeeData}
-              </tbody>
-            </table>
+          <div className='row'>
+            <div className='container'>
+              <table className='employee-list_table col-12'>
+                <caption>Employee List</caption>
+                <thead className='employee-list_table-heading'>
+                  <tr>
+                    <th>Full Name</th>
+                    <th>Role</th>
+                    <th>Experience</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody className='employee-list_table-body'>
+                  {employeeData}
+                </tbody>
+              </table>
+            </div>
           </div>
-        </div>
         </section>
       )
     }

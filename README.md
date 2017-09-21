@@ -32,6 +32,7 @@ in order to run local backend server on Linux:
 ```bash
 ./node_modules/.bin/json-server db/employees.json
 ```
+after successfully running the both servers, the app should be available at: http://localhost:3001/
 
 ## technologies used:
 * React
