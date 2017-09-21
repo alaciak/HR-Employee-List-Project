@@ -51,7 +51,7 @@ class EmployeeEditForm extends React.Component {
     this.props.history.push('/');
   }
 
-  handleonClickUpdate = e => {
+  handleOnClickUpdate = e => {
     e.preventDefault();
     fetch(`http://localhost:3000/employees/${this.props.match.params.id}`, {
       method: 'PUT',
@@ -97,7 +97,7 @@ class EmployeeEditForm extends React.Component {
             </fieldset>
           </form>
           <div className='row employee-data-form_buttons'>
-            <button className='btn btn-save' type='button' onClick={ this.handleonClickUpdate }>SAVE</button>
+            <button className='btn btn-save' type='button' onClick={ this.handleOnClickUpdate }>SAVE</button>
             <button className='btn btn-cancel'type='button' onClick={ this.handleOnClickCancel }>CANCEL</button>
           </div>
         </div>
