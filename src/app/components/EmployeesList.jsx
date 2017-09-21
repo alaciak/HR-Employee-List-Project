@@ -39,7 +39,7 @@ class EmployeesList extends React.Component {
       return null;
     } else {
       const employeeData = this.state.employeeList.map(employee => {
-        return <EmployeeData employee={ employee } onRemoveEmployee={ this.onRemoveEmployee }/>
+        return <EmployeeData key={ employee.id } id={ employee.id } employee={ employee } onRemoveEmployee={ this.onRemoveEmployee }/>
       });
       return (
         <section className='employee-list'>

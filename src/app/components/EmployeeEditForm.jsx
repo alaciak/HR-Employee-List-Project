@@ -10,13 +10,15 @@ class EmployeeEditForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      firstname:'',
-      lastname:'',
-      position: '',
-      role: '',
-      experience: '',
-      shortdescript: '',
-      longdescript:'',
+      employee: {
+        firstname:'',
+        lastname:'',
+        position: '',
+        role: '',
+        experience: '',
+        shortdescript: '',
+        longdescript:''
+      },
       loading: true
     }
   }
@@ -24,14 +26,7 @@ class EmployeeEditForm extends React.Component {
   componentDidMount() {
     fetch(`http://localhost:3000/employees/${this.props.match.params.id}`).then(r => r.json()).then(data => {
       this.setState({
-        id: data.id,
-        firstname: data.firstname,
-        lastname: data.lastname,
-        position: data.position,
-        role: data.role,
-        experience: data.experience,
-        shortdescript: data.shortdescript,
-        longdescript: data.longdescript,
+        employee: data,
         loading: false
       });
     }).catch(function(error) {
@@ -44,7 +39,10 @@ class EmployeeEditForm extends React.Component {
     const value = target.value;
     const name = target.name;
     this.setState({
-      [name]: value,
+      employee : {
+        ...this.state.employee,
+        [name]: value
+      }
     });
   }
 
@@ -55,19 +53,9 @@ class EmployeeEditForm extends React.Component {
 
   handleonClickUpdate = e => {
     e.preventDefault();
-    const updatedEmployee = {
-      id: this.state.id,
-      firstname: this.state.firstname,
-      lastname: this.state.lastname,
-      position: this.state.position,
-      role: this.state.role,
-      experience: this.state.experience,
-      shortdescript: this.state.shortdescript,
-      longdescript: this.state.longdescript,
-    }
     fetch(`http://localhost:3000/employees/${this.props.match.params.id}`, {
       method: 'PUT',
-      body: JSON.stringify(updatedEmployee),
+      body: JSON.stringify(this.state.employee),
       headers: {
         "Content-Type": "application/json"
       },
@@ -86,25 +74,25 @@ class EmployeeEditForm extends React.Component {
             <fieldset>
               <legend>Employee Data</legend>
               <label className='employee-data-form_edit-label'>First name:
-                <input type='text' value={ this.state.firstname } placeholder={ this.state.firstname } disabled ></input>
+                <input type='text' value={ this.state.employee.firstname } placeholder={ this.state.employee.firstname } disabled ></input>
               </label>
               <label className='employee-data-form_edit-label'>Last name:
-                <input type='text' value={ this.state.lastname } placeholder={ this.state.lastname } disabled ></input>
+                <input type='text' value={ this.state.employee.lastname } placeholder={ this.state.employee.lastname } disabled ></input>
               </label>
               <label className='employee-data-form_edit-label'>Role:
-                <input type='text' value={ this.state.role } placeholder={ this.state.role }  disabled ></input>
+                <input type='text' value={ this.state.employee.role } placeholder={ this.state.employee.role }  disabled ></input>
               </label>
               <label className='employee-data-form_edit-label'>Position:
-                <input type='text' value={ this.state.position } placeholder={ this.state.position } disabled ></input>
+                <input type='text' value={ this.state.employee.position } placeholder={ this.state.employee.position } disabled ></input>
               </label>
               <label className='employee-data-form_edit-label'>Experience (months):
-                <input type='text' value={ this.state.experience } placeholder={ this.state.experience } name='experience' onChange={ this.handleOnChange } ></input>
+                <input type='text' value={ this.state.employee.experience } placeholder={ this.state.employee.experience } name='experience' onChange={ this.handleOnChange } ></input>
               </label>
               <label className='employee-data-form_edit-label'>Short description:
-                <textarea className='employee-data-form_edit-description' type='text' value={ this.state.shortdescript } placeholder={ this.state.shortdescript } name='shortdescript' onChange={ this.handleOnChange } ></textarea>
+                <textarea className='employee-data-form_edit-description' type='text' value={ this.state.employee.shortdescript } placeholder={ this.state.employee.shortdescript } name='shortdescript' onChange={ this.handleOnChange } ></textarea>
               </label>
               <label className='employee-data-form_edit-label'>Long description:
-                <textarea className='employee-data-form_edit-description' type='text' value={ this.state.longdescript } placeholder={ this.state.longdescript } name='longdescript' onChange={ this.handleOnChange } ></textarea>
+                <textarea className='employee-data-form_edit-description' type='text' value={ this.state.employee.longdescript } placeholder={ this.state.employee.longdescript } name='longdescript' onChange={ this.handleOnChange } ></textarea>
               </label>
             </fieldset>
           </form>
