@@ -22,7 +22,7 @@ class Nav extends React.Component {
             <div className='navigation-logo col-6'>HR <span>System</span> Management</div>
             <div className='col-6'>
               <div className='navigation-user'>Logged as:
-                <select className='navigation-user_select' name='loggedIn' value={this.state.userLoggedIn} onChange={this.handleOnChangeOption}>
+                <select className='navigation-user_select' name='loggedIn' value={ this.state.userLoggedIn } onChange={ this.handleOnChangeOption }>
                   <option value='user'>User</option>
                   <option value='admin'>Admin</option>
                 </select>

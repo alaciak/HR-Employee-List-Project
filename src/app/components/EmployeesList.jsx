@@ -1,45 +1,20 @@
 import React from 'react';
 import EmployeeData from './EmployeeData.jsx';
+import { connect } from 'react-redux';
+import { getList } from '../actions/employeeListActions';
 
 class EmployeesList extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      employeeList: [],
-      loading: true
-    };
-  }
 
   componentDidMount() {
-    fetch('http://localhost:3000/employees').then(r => r.json()).then(data => {
-      this.setState({
-        employeeList: data,
-        loading: false
-      });
-    }).catch(function(error) {
-      console.log(error);
-    });
+    this.props.getList();
   }
 
-  onRemoveEmployee = employeeId => {
-    let employeeList = this.state.employeeList.slice();
-    let newEmployeeList = employeeList.filter((el) => el.id !== employeeId);
-    const baseUrl = 'http://localhost:3000/employees'
-    fetch(baseUrl + '/' + employeeId, { method : 'DELETE' }).then(r => r.json()).then(data => {
-        this.setState({
-          employeeList: newEmployeeList
-        });
-      }).catch(function(error) {
-        console.log(error);
-      });
-    }
-
   render() {
-    if (this.state.loading) {
+    if (this.props.loading) {
       return null;
     } else {
-      const employeeData = this.state.employeeList.map(employee => {
-        return <EmployeeData key={ employee.id } id={ employee.id } employee={ employee } onRemoveEmployee={ this.onRemoveEmployee }/>
+      const employeeData = this.props.employeeList.map(employee => {
+        return <EmployeeData key={ employee.id } id={ employee.id } employee={ employee } />
       });
       return (
         <section className='employee-list'>
@@ -56,7 +31,7 @@ class EmployeesList extends React.Component {
                   </tr>
                 </thead>
                 <tbody className='employee-list_table-body'>
-                  {employeeData}
+                  { employeeData }
                 </tbody>
               </table>
             </div>
@@ -67,4 +42,19 @@ class EmployeesList extends React.Component {
   }
 }
 
-module.exports = EmployeesList;
+const mapStateToProps = (state) => {
+  return {
+    employeeList: state.employeeListReducer.employeeList,
+    loading: state.employeeListReducer.loading
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        getList: () => {
+            dispatch(getList());
+        }
+    };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(EmployeesList);

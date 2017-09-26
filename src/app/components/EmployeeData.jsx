@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
-
+import { connect } from 'react-redux';
+import { removeEmployee } from '../actions/employeeListActions';
 
 class EmployeeData extends React.Component {
   static propTypes = {
@@ -10,7 +11,6 @@ class EmployeeData extends React.Component {
 
   constructor(props) {
     super(props);
-
   }
 
   handleOnClickEdit  = e => {
@@ -20,9 +20,7 @@ class EmployeeData extends React.Component {
 
   handleOnClickRemove = e => {
     e.stopPropagation();
-    if(typeof this.props.onRemoveEmployee === 'function') {
-      this.props.onRemoveEmployee(this.props.employee.id);
-    }
+    this.props.removeEmployee(this.props.employee.id);
   }
 
   render() {
@@ -40,4 +38,17 @@ class EmployeeData extends React.Component {
     }
   }
 
-module.exports = withRouter(EmployeeData);
+
+  const mapStateToProps = (state) => {
+    return { };
+  };
+
+  const mapDispatchToProps = (dispatch) => {
+      return {
+          removeEmployee: (employeeID) => {
+              dispatch(removeEmployee(employeeID));
+          }
+      };
+  };
+
+  export default connect(mapStateToProps, mapDispatchToProps)(withRouter(EmployeeData));

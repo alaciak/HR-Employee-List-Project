@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Main from './Main.jsx';
+import Main from '../components/Main.jsx';
 import EmployeesList from '../components/EmployeesList.jsx';
 import EmployeeEditForm from '../components/EmployeeEditForm.jsx';
 import '../scss/style.scss';
@@ -10,26 +10,30 @@ import {
   Switch
 } from 'react-router-dom';
 import { IndexRoute } from 'react-router';
+import { Provider } from "react-redux";
+import store from "../Store.jsx";
 
-
-class App extends React.Component {
+export class App extends React.Component {
 
   render() {
+
     return (
         <Router>
           <Main >
             <Switch>
-              <Route exact path='/' component={ EmployeesList }/>
-              <Route path='/edit/:id' component={ EmployeeEditForm }/>
+                <Route exact path='/' >
+                  <Provider store={ store }>
+                    <EmployeesList />
+                  </Provider>
+                </Route>
+                <Route path='/edit/:id' >
+                  <Provider store={ store } >
+                    <EmployeeEditForm />
+                  </Provider>
+                </Route>
             </Switch>
           </Main>
         </Router>
       );
     }
   }
-
-document.addEventListener('DOMContentLoaded', function() {
-
-  ReactDOM.render(
-    <App/>, document.querySelector('#app'));
-});

@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { getEmployee, updateEmployee } from '../actions/employeeEditFormActions';
 
 class EmployeeEditForm extends React.Component {
   static propTypes = {
@@ -18,29 +20,26 @@ class EmployeeEditForm extends React.Component {
         experience: '',
         shortdescript: '',
         longdescript:''
-      },
-      loading: true
+      }
     }
   }
 
   componentDidMount() {
-    fetch(`http://localhost:3000/employees/${this.props.match.params.id}`).then(r => r.json()).then(data => {
-      this.setState({
-        employee: data,
-        loading: false
-      });
-    }).catch(function(error) {
-      console.log(error);
+    this.props.getEmployee(this.props.match.params.id)
+  }
+
+  componentWillReceiveProps(nextProps) {
+    this.setState({
+      employee: nextProps.employee
     });
   }
 
   handleOnChange = e => {
-    const target = e.target;
-    const value = target.value;
-    const name = target.name;
+    const value = e.target.value;
+    const name = e.target.name;
     this.setState({
       employee : {
-        ...this.state.employee,
+        ...this.props.employee,
         [name]: value
       }
     });
@@ -53,17 +52,7 @@ class EmployeeEditForm extends React.Component {
 
   handleOnClickUpdate = e => {
     e.preventDefault();
-    fetch(`http://localhost:3000/employees/${this.props.match.params.id}`, {
-      method: 'PUT',
-      body: JSON.stringify(this.state.employee),
-      headers: {
-        "Content-Type": "application/json"
-      },
-    }).then(data => {
-      this.props.history.push('/');
-    }).catch(function(error) {
-      console.log(error);
-    });
+    this.props.updateEmployee(this.state.employee, this.props.match.params.id, this.props.history);
   }
 
   render() {
@@ -106,4 +95,22 @@ class EmployeeEditForm extends React.Component {
   }
 }
 
-module.exports = EmployeeEditForm;
+const mapStateToProps = (state) => {
+  return {
+    employee: state.employeeEditFormReducer.employee,
+    loading: state.employeeEditFormReducer.loading
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+      getEmployee: (employeeId) => {
+          dispatch(getEmployee(employeeId));
+        },
+      updateEmployee: (employee, employeeId, history) => {
+          dispatch(updateEmployee(employee, employeeId, history));
+        }
+    };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(EmployeeEditForm));

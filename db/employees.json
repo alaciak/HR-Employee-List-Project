@@ -26,7 +26,7 @@
       "lastname": "Smith",
       "position": "Manager",
       "role": "User",
-      "experience": 16,
+      "experience": "12",
       "shortdescript": "Aliquam nulla purus, commodo eget viverra.",
       "longdescript": "Nulla sagittis vehicula imperdiet. Nullam in eros pellentesque, blandit quam mattis, sollicitudin ligula."
     },
@@ -36,7 +36,7 @@
       "lastname": "Smith",
       "position": "Tester",
       "role": "User",
-      "experience": 22,
+      "experience": "22",
       "shortdescript": "Etiam iaculis, libero in volutpat fermentum.",
       "longdescript": "Cras justo elit, tristique vitae posuere a, blandit eu nunc. Cras arcu diam, consequat vel enim id, ullamcorper accumsan ex."
     },
@@ -56,7 +56,7 @@
       "lastname": "Łaciak",
       "position": "Developer",
       "role": "User",
-      "experience": "12",
+      "experience": "24",
       "shortdescript": "Ut maximus nibh a est rhoncus, id feugiat tortor tristique.",
       "longdescript": "Nunc pellentesque sem sapien, eget pellentesque leo luctus et. Sed feugiat viverra sem quis egestas. Curabitur accumsan mattis leo, semper ultricies lacus ornare vitaem."
     },
