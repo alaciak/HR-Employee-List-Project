@@ -3,6 +3,7 @@ import { EmployeeData } from '../../app/containers/EmployeeData.jsx';
 import { shallow } from 'enzyme';
 import toJson from 'enzyme-to-json';
 import createRouterContext from 'react-router-test-context';
+import PropTypes from 'prop-types';
 
 describe('EmployeeData', () => {
 
@@ -21,7 +22,7 @@ describe('EmployeeData', () => {
 
     const context = createRouterContext();
     EmployeeData.propTypes = {
-      router: React.PropTypes.object
+      router: PropTypes.object
     };
 
     const wrapper = shallow(<EmployeeData employee={ testEmployee }/>, { context });

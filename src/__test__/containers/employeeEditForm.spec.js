@@ -1,8 +1,10 @@
 import React from 'react';
 import { EmployeeEditForm } from '../../app/containers/EmployeeEditForm.jsx';
-import { shallow, render } from 'enzyme';
+import { render } from 'enzyme';
 import toJson from 'enzyme-to-json';
 import createRouterContext from 'react-router-test-context';
+import PropTypes from 'prop-types';
+
 
 describe('EmployeeEditForm', () => {
 
@@ -21,7 +23,7 @@ describe('EmployeeEditForm', () => {
 
     const context = createRouterContext();
     EmployeeEditForm.propTypes = {
-      router: React.PropTypes.object
+      router: PropTypes.object
     };
 
     const wrapper = render(

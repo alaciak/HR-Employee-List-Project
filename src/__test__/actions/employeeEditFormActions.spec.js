@@ -43,11 +43,12 @@ describe('employeeEditFormActions', () => {
     const middlewares = [promise(), thunk];
     const expectedActions = ['UPDATE_EMPLOYEE_PENDING', 'UPDATE_EMPLOYEE_FULFILLED'];
     const store = mockStore(middlewares);
+    const history = { push: (path) => { history.pushedPath = path; }};
 
-    store.dispatch(updateEmployee(testEmployee)).then(() => {
+    store.dispatch(updateEmployee(testEmployee, history)).then(() => {
       const dispatchedActions = store.getActions();
-      console.log( dispatchedActions.map(action => action.type));
       expect(dispatchedActions.map(action => action.type)).toEqual(expectedActions);
+      expect(history.pushedPath = '/');
     });
   });
 

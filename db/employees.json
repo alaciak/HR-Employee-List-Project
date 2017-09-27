@@ -27,8 +27,8 @@
       "position": "Manager",
       "role": "User",
       "experience": "12",
-      "shortdescript": "Aliquam nulla purus, commodo eget viverra.",
-      "longdescript": "Nulla sagittis vehicula imperdiet. Nullam in eros pellentesque, blandit quam mattis, sollicitudin ligula."
+      "shortdescript": "Nullam viverra consectetuer.",
+      "longdescript": "Quisque cursus et, porttitor risus. Aliquam sem. In hendrerit nulla quam nunc, accumsan congue."
     },
     {
       "id": 4,
@@ -37,6 +37,16 @@
       "position": "Tester",
       "role": "User",
       "experience": "22",
+      "shortdescript": "Etiam iaculis, libero in volutpat fermentum.",
+      "longdescript": "Cras justo elit, tristique vitae posuere a, blandit eu nunc. Cras arcu diam, consequat vel enim id, ullamcorper accumsan ex."
+    },
+    {
+      "id": 5,
+      "firstname": "Piotr",
+      "lastname": "Test",
+      "position": "Admin",
+      "role": "User",
+      "experience": "6",
       "shortdescript": "Etiam iaculis, libero in volutpat fermentum.",
       "longdescript": "Cras justo elit, tristique vitae posuere a, blandit eu nunc. Cras arcu diam, consequat vel enim id, ullamcorper accumsan ex."
     },

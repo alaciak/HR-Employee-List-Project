@@ -17,13 +17,13 @@ export function getEmployee(employeeId) {
 export function updateEmployee(employee, history) {
 
   return {
-      type: 'UPDATE_EMPLOYEE',
-      payload: fetch(baseUrl + employee.id, {
-        method: 'PUT',
-        body: JSON.stringify(employee),
-        headers: {
-          "Content-Type": "application/json"
-        }
+    type: 'UPDATE_EMPLOYEE',
+    payload: fetch(baseUrl + employee.id, {
+      method: 'PUT',
+      body: JSON.stringify(employee),
+      headers: {
+        "Content-Type": "application/json"
+      }
     }).then(() => history.push('/'))
   };
 }
