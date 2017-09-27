@@ -23,7 +23,7 @@ describe('employeeListActions', () => {
     });
   });
 
-  it('should dispatch REMOVE_EMPLOYEE_PENDING and REMOVE_EMPLOYEE_FULFILLED when fetching data', () => {
+  it('should dispatch REMOVE_EMPLOYEE_PENDING, REMOVE_EMPLOYEE_FULFILLED, GET_LIST_PENDING and GET_LIST_FULFILLED when fetching data', () => {
     nock('http://localhost:3000/')
       .delete('/employees/1')
       .reply(200, { body: []});
