@@ -6,7 +6,7 @@ import thunk from 'redux-thunk';
 
 describe('employeeListActions', () => {
 
-  const middlewares = [promise()];
+  const middlewares = [promise(), thunk];
   const mockStore = configureMockStore(middlewares);
 
   it('should dispatch GET_LIST_PENDING and GET_LIST_FULFILLED when fetching data', () => {
@@ -27,12 +27,14 @@ describe('employeeListActions', () => {
     nock('http://localhost:3000/')
       .delete('/employees/1')
       .reply(200, { body: []});
+    nock('http://localhost:3000/')
+      .get('/employees')
+      .reply(200, { body: []});
 
-    const middlewares = [promise(), thunk];
-    const expectedActions = ['REMOVE_EMPLOYEE_PENDING', 'REMOVE_EMPLOYEE_FULFILLED'];
-    const store = mockStore(middlewares);
+    const expectedActions = ['REMOVE_EMPLOYEE_PENDING', 'REMOVE_EMPLOYEE_FULFILLED', 'GET_LIST_PENDING', 'GET_LIST_FULFILLED'];
+    const store = mockStore({});
 
-    store.dispatch(getList()).then(() => {
+    store.dispatch(removeEmployee('1')).then().then(() => {
       const dispatchedActions = store.getActions();
       expect(dispatchedActions.map(action => action.type)).toEqual(expectedActions);
     });
