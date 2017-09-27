@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`EmployeeData should render if the employee object is passed 1`] = `
+<tr
+  className="employee-data"
+  id={1}
+  key="1"
+  onClick={[Function]}
+>
+  <td>
+    testName
+     
+    testLastname
+  </td>
+  <td>
+    testRole
+  </td>
+  <td>
+    testExperience
+     month(s)
+  </td>
+  <td
+    className="employee-data_remove"
+  >
+    <div
+      onClick={[Function]}
+    >
+      X
+    </div>
+    <div
+      className="employee-data employee-data_description"
+    >
+      testShortdescript
+    </div>
+  </td>
+</tr>
+`;

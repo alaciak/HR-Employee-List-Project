@@ -1,0 +1,116 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`EmployeeEditForm should render if the data are fetched from the server 1`] = `
+<section
+  class="employee-data-form container"
+>
+  <div
+    class="row"
+  >
+    <form
+      action=""
+      class="employee-data-form_edit col-12"
+      name="employee-data"
+    >
+      <fieldset>
+        <legend>
+          Employee Data
+        </legend>
+        <label
+          class="employee-data-form_edit-label"
+        >
+          First name:
+          <input
+            disabled=""
+            placeholder=""
+            type="text"
+            value=""
+          />
+        </label>
+        <label
+          class="employee-data-form_edit-label"
+        >
+          Last name:
+          <input
+            disabled=""
+            placeholder=""
+            type="text"
+            value=""
+          />
+        </label>
+        <label
+          class="employee-data-form_edit-label"
+        >
+          Role:
+          <input
+            disabled=""
+            placeholder=""
+            type="text"
+            value=""
+          />
+        </label>
+        <label
+          class="employee-data-form_edit-label"
+        >
+          Position:
+          <input
+            disabled=""
+            placeholder=""
+            type="text"
+            value=""
+          />
+        </label>
+        <label
+          class="employee-data-form_edit-label"
+        >
+          Experience (months):
+          <input
+            name="experience"
+            placeholder=""
+            type="text"
+            value=""
+          />
+        </label>
+        <label
+          class="employee-data-form_edit-label"
+        >
+          Short description:
+          <textarea
+            class="employee-data-form_edit-description"
+            name="shortdescript"
+            placeholder=""
+            type="text"
+          />
+        </label>
+        <label
+          class="employee-data-form_edit-label"
+        >
+          Long description:
+          <textarea
+            class="employee-data-form_edit-description"
+            name="longdescript"
+            placeholder=""
+            type="text"
+          />
+        </label>
+      </fieldset>
+    </form>
+    <div
+      class="row employee-data-form_buttons"
+    >
+      <button
+        class="btn btn-save"
+        type="button"
+      >
+        SAVE
+      </button>
+      <button
+        class="btn btn-cancel"
+        type="button"
+      >
+        CANCEL
+      </button>
+    </div>
+  </div>
+</section>
+`;

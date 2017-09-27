@@ -4,7 +4,7 @@ import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { getEmployee, updateEmployee } from '../actions/employeeEditFormActions';
 
-class EmployeeEditForm extends React.Component {
+export class EmployeeEditForm extends React.Component {
   static propTypes = {
     history: PropTypes.object.isRequired
   }
@@ -29,7 +29,9 @@ class EmployeeEditForm extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    this.setState({employee: nextProps.employee});
+    this.setState({
+      employee: nextProps.employee
+    });
   }
 
   handleOnChange = e => {

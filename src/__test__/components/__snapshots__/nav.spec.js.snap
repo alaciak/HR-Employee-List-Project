@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Nav should render header and nav of the page 1`] = `
+<header
+  className="navigation"
+>
+  <nav
+    className="container"
+  >
+    <div
+      className="row"
+    >
+      <div
+        className="navigation-logo col-6"
+      >
+        HR 
+        <span>
+          System
+        </span>
+         Management
+      </div>
+      <div
+        className="col-6"
+      >
+        <div
+          className="navigation-user"
+        >
+          Logged as:
+          <select
+            className="navigation-user_select"
+            name="loggedIn"
+            onChange={[Function]}
+          >
+            <option
+              value="user"
+            >
+              User
+            </option>
+            <option
+              value="admin"
+            >
+              Admin
+            </option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+`;

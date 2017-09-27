@@ -4,7 +4,7 @@ import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { removeEmployee } from '../actions/employeeListActions';
 
-class EmployeeData extends React.Component {
+export class EmployeeData extends React.Component {
   static propTypes = {
     history: PropTypes.object.isRequired
   }

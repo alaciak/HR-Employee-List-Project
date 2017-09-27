@@ -3,7 +3,7 @@ import EmployeeData from './EmployeeData.jsx';
 import { connect } from 'react-redux';
 import { getList } from '../actions/employeeListActions';
 
-class EmployeesList extends React.Component {
+export class EmployeesList extends React.Component {
 
   componentDidMount() {
     this.props.getList();
