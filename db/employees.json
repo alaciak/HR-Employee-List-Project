@@ -63,17 +63,17 @@
     {
       "id": 7,
       "firstname": "James",
-      "lastname": "Błąd",
+      "lastname": "Bond",
       "position": "HR",
       "role": "User",
-      "experience": 12,
+      "experience": "12",
       "shortdescript": "Nulla lacus erat, dictum pharetra tortor.",
       "longdescript": "Duis eget massa elit. Nulla sit amet ligula commodo enim cursus blandit."
     },
     {
       "id": 8,
       "firstname": "Harry",
-      "lastname": "Portfel",
+      "lastname": "Potter",
       "position": "Tester",
       "role": "User",
       "experience": 24,

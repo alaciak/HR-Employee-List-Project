@@ -1,6 +1,6 @@
 import React from 'react';
 
-class Nav extends React.Component {
+export class Nav extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -34,5 +34,3 @@ class Nav extends React.Component {
     );
   }
 }
-
-module.exports = Nav;

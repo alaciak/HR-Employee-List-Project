@@ -1,13 +1,14 @@
-const employeeEditFormReducer = (state = {
+export const employeeEditFormReducer = (state = {
   employee: {
-    firstname:'',
-    lastname:'',
+    firstname: '',
+    lastname: '',
     position: '',
     role: '',
     experience: '',
     shortdescript: '',
-    longdescript:''
-  }, loading: true
+    longdescript: ''
+  },
+  loading: true
 }, action) => {
   switch (action.type) {
     case "GET_EMPLOYEE_FULFILLED":
@@ -26,5 +27,3 @@ const employeeEditFormReducer = (state = {
   }
   return state;
 };
-
-module.exports = employeeEditFormReducer;

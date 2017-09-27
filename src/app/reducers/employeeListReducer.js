@@ -1,4 +1,4 @@
-const employeeListReducer = (state = {
+export const employeeListReducer = (state = {
   employeeList: [],
   loading: true
 }, action) => {
@@ -19,5 +19,3 @@ const employeeListReducer = (state = {
   }
   return state;
 };
-
-module.exports = employeeListReducer;

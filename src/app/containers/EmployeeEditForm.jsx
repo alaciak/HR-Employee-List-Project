@@ -13,13 +13,13 @@ class EmployeeEditForm extends React.Component {
     super(props);
     this.state = {
       employee: {
-        firstname:'',
-        lastname:'',
+        firstname: '',
+        lastname: '',
         position: '',
         role: '',
         experience: '',
         shortdescript: '',
-        longdescript:''
+        longdescript: ''
       }
     }
   }
@@ -29,23 +29,21 @@ class EmployeeEditForm extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    this.setState({
-      employee: nextProps.employee
-    });
+    this.setState({employee: nextProps.employee});
   }
 
   handleOnChange = e => {
     const value = e.target.value;
     const name = e.target.name;
     this.setState({
-      employee : {
+      employee: {
         ...this.props.employee,
         [name]: value
       }
     });
   }
 
-  handleOnClickCancel  = e => {
+  handleOnClickCancel = e => {
     e.preventDefault();
     this.props.history.push('/');
   }
@@ -63,31 +61,31 @@ class EmployeeEditForm extends React.Component {
             <fieldset>
               <legend>Employee Data</legend>
               <label className='employee-data-form_edit-label'>First name:
-                <input type='text' value={ this.state.employee.firstname } placeholder={ this.state.employee.firstname } disabled ></input>
+                <input type='text' value={ this.state.employee.firstname } placeholder={ this.state.employee.firstname } disabled></input>
               </label>
               <label className='employee-data-form_edit-label'>Last name:
-                <input type='text' value={ this.state.employee.lastname } placeholder={ this.state.employee.lastname } disabled ></input>
+                <input type='text' value={ this.state.employee.lastname } placeholder={ this.state.employee.lastname } disabled></input>
               </label>
               <label className='employee-data-form_edit-label'>Role:
-                <input type='text' value={ this.state.employee.role } placeholder={ this.state.employee.role }  disabled ></input>
+                <input type='text' value={ this.state.employee.role } placeholder={ this.state.employee.role } disabled></input>
               </label>
               <label className='employee-data-form_edit-label'>Position:
-                <input type='text' value={ this.state.employee.position } placeholder={ this.state.employee.position } disabled ></input>
+                <input type='text' value={ this.state.employee.position } placeholder={ this.state.employee.position } disabled></input>
               </label>
               <label className='employee-data-form_edit-label'>Experience (months):
-                <input type='text' value={ this.state.employee.experience } placeholder={ this.state.employee.experience } name='experience' onChange={ this.handleOnChange } ></input>
+                <input type='text' value={ this.state.employee.experience } placeholder={ this.state.employee.experience}  name='experience' onChange={ this.handleOnChange }></input>
               </label>
               <label className='employee-data-form_edit-label'>Short description:
-                <textarea className='employee-data-form_edit-description' type='text' value={ this.state.employee.shortdescript } placeholder={ this.state.employee.shortdescript } name='shortdescript' onChange={ this.handleOnChange } ></textarea>
+                <textarea className='employee-data-form_edit-description' type='text' value={ this.state.employee.shortdescript } placeholder={ this.state.employee.shortdescript } name='shortdescript' onChange={this.handleOnChange}></textarea>
               </label>
               <label className='employee-data-form_edit-label'>Long description:
-                <textarea className='employee-data-form_edit-description' type='text' value={ this.state.employee.longdescript } placeholder={ this.state.employee.longdescript } name='longdescript' onChange={ this.handleOnChange } ></textarea>
+                <textarea className='employee-data-form_edit-description' type='text' value={ this.state.employee.longdescript } placeholder={ this.state.employee.longdescript } name='longdescript' onChange={this.handleOnChange}></textarea>
               </label>
             </fieldset>
           </form>
           <div className='row employee-data-form_buttons'>
             <button className='btn btn-save' type='button' onClick={ this.handleOnClickUpdate }>SAVE</button>
-            <button className='btn btn-cancel'type='button' onClick={ this.handleOnClickCancel }>CANCEL</button>
+            <button className='btn btn-cancel' type='button' onClick={ this.handleOnClickCancel }>CANCEL</button>
           </div>
         </div>
       </section>
@@ -103,14 +101,14 @@ const mapStateToProps = (state) => {
 };
 
 const mapDispatchToProps = (dispatch) => {
-    return {
-      getEmployee: (employeeId) => {
-          dispatch(getEmployee(employeeId));
-        },
-      updateEmployee: (employee, employeeId, history) => {
-          dispatch(updateEmployee(employee, employeeId, history));
-        }
-    };
+  return {
+    getEmployee: (employeeId) => {
+      dispatch(getEmployee(employeeId));
+    },
+    updateEmployee: (employee, employeeId, history) => {
+      dispatch(updateEmployee(employee, employeeId, history));
+    }
+  };
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(withRouter(EmployeeEditForm));

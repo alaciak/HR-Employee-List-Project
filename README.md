@@ -3,7 +3,7 @@
 ## work in progress
 
 ## description
-The single page web application has been created with React.js.
+The single page web application has been created with React.js and Redux.
 It allows managing of the employee basic data fetched from the backend.
 The following features has been implemented so far:
 * employee list is fetched from the backend
@@ -37,6 +37,7 @@ after successfully running the both servers, the app should be available at: htt
 ## technologies used:
 * React
 * React Router
+* Redux
 * Sass
 * Fetch
 * Webpack

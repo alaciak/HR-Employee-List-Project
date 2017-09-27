@@ -14,7 +14,7 @@ class EmployeesList extends React.Component {
       return null;
     } else {
       const employeeData = this.props.employeeList.map(employee => {
-        return <EmployeeData key={ employee.id } id={ employee.id } employee={ employee } />
+        return <EmployeeData key={ employee.id } id={ employee.id } employee={ employee }/>
       });
       return (
         <section className='employee-list'>
@@ -50,11 +50,11 @@ const mapStateToProps = (state) => {
 };
 
 const mapDispatchToProps = (dispatch) => {
-    return {
-        getList: () => {
-            dispatch(getList());
-        }
-    };
+  return {
+    getList: () => {
+      dispatch(getList());
+    }
+  };
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(EmployeesList);

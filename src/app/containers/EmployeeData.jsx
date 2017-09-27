@@ -13,7 +13,7 @@ class EmployeeData extends React.Component {
     super(props);
   }
 
-  handleOnClickEdit  = e => {
+  handleOnClickEdit = e => {
     e.stopPropagation();
     this.props.history.push(`/edit/${this.props.employee.id}`);
   }
@@ -34,21 +34,20 @@ class EmployeeData extends React.Component {
           <div className='employee-data employee-data_description'>{ this.props.employee.shortdescript }</div>
         </td>
       </tr>
-      );
-    }
+    );
   }
+}
 
+const mapStateToProps = (state) => {
+  return {};
+};
 
-  const mapStateToProps = (state) => {
-    return { };
+const mapDispatchToProps = (dispatch) => {
+  return {
+    removeEmployee: (employeeID) => {
+      dispatch(removeEmployee(employeeID));
+    }
   };
+};
 
-  const mapDispatchToProps = (dispatch) => {
-      return {
-          removeEmployee: (employeeID) => {
-              dispatch(removeEmployee(employeeID));
-          }
-      };
-  };
-
-  export default connect(mapStateToProps, mapDispatchToProps)(withRouter(EmployeeData));
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(EmployeeData));
