@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Main should render if Nav component with children (if they are passed) 1`] = `
+exports[`Main should render Nav component 1`] = `
 <div>
   <Nav />
 </div>

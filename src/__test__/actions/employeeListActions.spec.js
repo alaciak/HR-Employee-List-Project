@@ -1,7 +1,8 @@
-import { getList } from '../../app/actions/employeeListActions';
+import { getList, removeEmployee } from '../../app/actions/employeeListActions';
 import nock from 'nock';
 import configureMockStore from 'redux-mock-store';
 import promise from 'redux-promise-middleware';
+import thunk from 'redux-thunk';
 
 describe('employeeListActions', () => {
 
@@ -20,7 +21,21 @@ describe('employeeListActions', () => {
       const dispatchedActions = store.getActions();
       expect(dispatchedActions.map(action => action.type)).toEqual(expectedActions);
     });
+  });
 
+  it('should dispatch REMOVE_EMPLOYEE_PENDING and REMOVE_EMPLOYEE_FULFILLED when fetching data', () => {
+    nock('http://localhost:3000/')
+      .delete('/employees/1')
+      .reply(200, { body: []});
+
+    const middlewares = [promise(), thunk];
+    const expectedActions = ['REMOVE_EMPLOYEE_PENDING', 'REMOVE_EMPLOYEE_FULFILLED'];
+    const store = mockStore(middlewares);
+
+    store.dispatch(getList()).then(() => {
+      const dispatchedActions = store.getActions();
+      expect(dispatchedActions.map(action => action.type)).toEqual(expectedActions);
+    });
   });
 
 });

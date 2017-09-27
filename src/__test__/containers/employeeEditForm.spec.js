@@ -25,7 +25,7 @@ describe('EmployeeEditForm', () => {
     };
 
     const wrapper = render(
-        <EmployeeEditForm loading={ false } employee={ testEmployee }/>,
+        <EmployeeEditForm employee={ testEmployee }/>,
         { context }
     );
 

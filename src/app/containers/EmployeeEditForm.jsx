@@ -39,7 +39,7 @@ export class EmployeeEditForm extends React.Component {
     const name = e.target.name;
     this.setState({
       employee: {
-        ...this.props.employee,
+        ...this.state.employee,
         [name]: value
       }
     });
@@ -52,7 +52,7 @@ export class EmployeeEditForm extends React.Component {
 
   handleOnClickUpdate = e => {
     e.preventDefault();
-    this.props.updateEmployee(this.state.employee, this.props.match.params.id, this.props.history);
+    this.props.updateEmployee(this.state.employee, this.props.history);
   }
 
   render() {
@@ -97,8 +97,7 @@ export class EmployeeEditForm extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    employee: state.employeeEditFormReducer.employee,
-    loading: state.employeeEditFormReducer.loading
+    employee: state.employeeEditFormReducer.employee
   };
 };
 
@@ -107,8 +106,8 @@ const mapDispatchToProps = (dispatch) => {
     getEmployee: (employeeId) => {
       dispatch(getEmployee(employeeId));
     },
-    updateEmployee: (employee, employeeId, history) => {
-      dispatch(updateEmployee(employee, employeeId, history));
+    updateEmployee: (employee, history) => {
+      dispatch(updateEmployee(employee, history));
     }
   };
 };

@@ -1,7 +1,8 @@
-import { getEmployee } from '../../app/actions/employeeEditFormActions';
+import { getEmployee, updateEmployee } from '../../app/actions/employeeEditFormActions';
 import nock from 'nock';
 import configureMockStore from 'redux-mock-store';
 import promise from 'redux-promise-middleware';
+import thunk from 'redux-thunk';
 
 describe('employeeEditFormActions', () => {
 
@@ -21,6 +22,33 @@ describe('employeeEditFormActions', () => {
       expect(dispatchedActions.map(action => action.type)).toEqual(expectedActions);
     });
 
+  });
+
+  it('should dispatch UPDATE_EMPLOYEE_PENDING and UPDATE_EMPLOYEE_FULFILLED when fetching data', () => {
+    nock('http://localhost:3000/')
+      .put('/employees/1')
+      .reply(200, { body: []});
+
+    const testEmployee = {
+      id: 1,
+      firstname: 'testName',
+      lastname: 'testLastname',
+      position: 'testPosition',
+      role: 'testRole',
+      experience: 'testExperience',
+      shortdescript: 'testShortdescript',
+      longdescript: 'testLongDescript'
+    };
+
+    const middlewares = [promise(), thunk];
+    const expectedActions = ['UPDATE_EMPLOYEE_PENDING', 'UPDATE_EMPLOYEE_FULFILLED'];
+    const store = mockStore(middlewares);
+
+    store.dispatch(updateEmployee(testEmployee)).then(() => {
+      const dispatchedActions = store.getActions();
+      console.log( dispatchedActions.map(action => action.type));
+      expect(dispatchedActions.map(action => action.type)).toEqual(expectedActions);
+    });
   });
 
 });

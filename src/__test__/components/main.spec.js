@@ -5,7 +5,7 @@ import toJson from 'enzyme-to-json';
 
 describe('Main', () => {
 
-  it('should render if Nav component with children (if they are passed)', () => {
+  it('should render Nav component', () => {
 
     const wrapper = shallow(<Main />);
 

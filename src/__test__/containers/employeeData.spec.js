@@ -1,6 +1,6 @@
 import React from 'react';
 import { EmployeeData } from '../../app/containers/EmployeeData.jsx';
-import { shallow, render } from 'enzyme';
+import { shallow } from 'enzyme';
 import toJson from 'enzyme-to-json';
 import createRouterContext from 'react-router-test-context';
 

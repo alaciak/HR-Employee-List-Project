@@ -1,6 +1,6 @@
 import React from 'react';
 import { EmployeesList } from '../../app/containers/EmployeesList.jsx';
-import { shallow, render } from 'enzyme';
+import { shallow } from 'enzyme';
 import toJson from 'enzyme-to-json';
 
 describe('EmployeesList', () => {

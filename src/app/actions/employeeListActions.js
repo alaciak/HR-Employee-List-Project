@@ -1,9 +1,8 @@
 import fetch from 'isomorphic-fetch';
-import thunk from 'redux-thunk';
+
+const baseUrl = 'http://localhost:3000/employees';
 
 export function getList() {
-
-  const baseUrl = 'http://localhost:3000/employees';
 
   const fetchPromise = fetch(baseUrl).then(resp => resp.json()). then(data => {
     return data;
@@ -15,8 +14,6 @@ export function getList() {
 }
 
 export function removeEmployee(employeeId) {
-
-  const baseUrl = 'http://localhost:3000/employees';
 
   return dispatch => {
     return dispatch({

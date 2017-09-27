@@ -20,14 +20,5 @@ describe('employeeListReducer', () => {
       loading: false
     });
   });
-
-  it('REMOVE_EMPLOYEE_FULFILLED', () => {
-    expect(employeeListReducer(undefined, {
-      type: 'REMOVE_EMPLOYEE_FULFILLED',
-    })).toEqual({
-      employeeList: [],
-      loading: false
-    });
-  });
-
+  
 });

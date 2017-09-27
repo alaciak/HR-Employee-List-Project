@@ -1,7 +1,5 @@
 # HR-Employee-List-Project
 
-## work in progress
-
 ## description
 The single page web application has been created with React.js and Redux.
 It allows managing of the employee basic data fetched from the backend.
@@ -38,6 +36,8 @@ after successfully running the both servers, the app should be available at: htt
 * React
 * React Router
 * Redux
+* Jest (unit tests)
 * Sass
 * Fetch
+* JSON server
 * Webpack

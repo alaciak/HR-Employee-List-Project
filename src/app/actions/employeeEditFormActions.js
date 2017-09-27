@@ -1,9 +1,9 @@
 import fetch from 'isomorphic-fetch';
 import thunk from 'redux-thunk';
 
-export function getEmployee(employeeId) {
+const baseUrl = 'http://localhost:3000/employees/';
 
-  const baseUrl = 'http://localhost:3000/employees/';
+export function getEmployee(employeeId) {
 
   const fetchPromise = fetch(baseUrl + employeeId).then(resp => resp.json()).then(data => {
     return data;
@@ -14,20 +14,16 @@ export function getEmployee(employeeId) {
   };
 }
 
-export function updateEmployee(employee, employeeId, history) {
+export function updateEmployee(employee, history) {
 
-  const baseUrl = 'http://localhost:3000/employees/';
-
-  return dispatch => {
-    return dispatch({
+  return {
       type: 'UPDATE_EMPLOYEE',
-      payload: fetch(baseUrl + employeeId, {
+      payload: fetch(baseUrl + employee.id, {
         method: 'PUT',
         body: JSON.stringify(employee),
         headers: {
           "Content-Type": "application/json"
         }
-      })
-    }).then(() => history.push('/'));
+    }).then(() => history.push('/'))
   };
 }

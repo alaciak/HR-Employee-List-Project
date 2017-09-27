@@ -6,7 +6,7 @@
       "lastname": "Kowalska",
       "position": "Admin",
       "role": "Admin",
-      "experience": 24,
+      "experience": "26",
       "shortdescript": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       "longdescript": "Sed vulputate molestie tellus vel vehicula. Nulla at mi mauris. In dui erat, viverra in tincidunt non, convallis et turpis."
     },
@@ -16,7 +16,7 @@
       "lastname": "Kowalski",
       "position": "Developer",
       "role": "Admin",
-      "experience": 36,
+      "experience": "42",
       "shortdescript": "Proin elementum consequat leo et pulvinar.",
       "longdescript": "Duis in velit id ante fermentum consectetur ac non ex. Nunc eu fermentum enim, vitae ornare ante."
     },
@@ -41,22 +41,12 @@
       "longdescript": "Cras justo elit, tristique vitae posuere a, blandit eu nunc. Cras arcu diam, consequat vel enim id, ullamcorper accumsan ex."
     },
     {
-      "id": 5,
-      "firstname": "Piotr",
-      "lastname": "Test",
-      "position": "Developer",
-      "role": "Admin",
-      "experience": "15",
-      "shortdescript": "Nulla posuere ante sit amet nibh consectetur.",
-      "longdescript": "Etiam mattis urna nisl, a imperdiet orci imperdiet euismod. Suspendisse facilisis, libero pellentesque malesuada ultricies, dui urna elementum quam."
-    },
-    {
       "id": 6,
       "firstname": "Anna",
       "lastname": "Łaciak",
       "position": "Developer",
       "role": "User",
-      "experience": "24",
+      "experience": "18",
       "shortdescript": "Ut maximus nibh a est rhoncus, id feugiat tortor tristique.",
       "longdescript": "Nunc pellentesque sem sapien, eget pellentesque leo luctus et. Sed feugiat viverra sem quis egestas. Curabitur accumsan mattis leo, semper ultricies lacus ornare vitaem."
     },
