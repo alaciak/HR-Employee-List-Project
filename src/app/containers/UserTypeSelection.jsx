@@ -10,7 +10,7 @@ export class UserTypeSelection extends React.Component {
 
   render() {
     return (
-      <select className='navigation-user_select' name='loggedIn' value={this.props.userType} onChange={this.handleOnChangeOption}>
+      <select className='navigation-user_select' name='loggedIn' value={ this.props.userType } onChange={ this.handleOnChangeOption }>
         <option value='user'>User</option>
         <option value='admin'>Admin</option>
       </select>

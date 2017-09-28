@@ -16,41 +16,37 @@ export class EmployeeData extends React.Component {
     }
   }
 
-  handleOnClickEdit = e => {
+  onClickValidate () {
     if (this.props.userType === 'user' && (this.props.employee.position === 'Manager' || this.props.employee.position === 'Admin')) {
       this.setState({
-        alertMessageDispaly: 'block'
+        alertMessageDispaly: 'block',
+        timeoutId: setTimeout(() => {
+          this.setState({
+            alertMessageDispaly: 'none'
+          });
+        }, 2000)
       });
-      this.timeOutId = setTimeout(() => {
-        this.setState({
-          alertMessageDispaly: 'none'
-        });
-      }, 2000)
-    } else {
-      e.stopPropagation();
+      return false;
+    }
+    return true;
+  }
+
+  handleOnClickEdit = e => {
+    e.stopPropagation();
+    if(this.onClickValidate()) {
       this.props.history.push(`/edit/${this.props.employee.id}`);
     }
   }
 
   handleOnClickRemove = e => {
-    if (this.props.userType === 'user' && (this.props.employee.position === 'Manager' || this.props.employee.position === 'Admin')) {
-      e.stopPropagation();
-      this.setState({
-        alertMessageDispaly: 'block'
-      });
-      this.timeOutId = setTimeout(() => {
-        this.setState({
-          alertMessageDispaly: 'none'
-        });
-      },2000)
-    } else {
-      e.stopPropagation();
+    e.stopPropagation();
+    if(this.onClickValidate()) {
       this.props.removeEmployee(this.props.employee.id);
     }
   }
 
   componentWillUnmount() {
-    clearInterval(this.timeOutId);
+    clearTimeout(this.state.timeoutId);
   }
 
   render() {
@@ -62,7 +58,7 @@ export class EmployeeData extends React.Component {
         <td className='employee-data_remove'>
           <div onClick={ this.handleOnClickRemove }>X</div>
           <div className='employee-data employee-data_description'>{ this.props.employee.shortdescript }</div>
-          <div className='employee-data employee-data_allert-message' style={{display: this.state.alertMessageDispaly }}><div className='employee-data_allert-message_image'></div><p>You do not have a permission to remove or edit this employee</p></div>
+          <div className='employee-data employee-data_allert-message' style={{ display: this.state.alertMessageDispaly }}><div className='employee-data_allert-message_image'></div><p>You do not have a permission to remove or edit this employee</p></div>
         </td>
       </tr>
     );

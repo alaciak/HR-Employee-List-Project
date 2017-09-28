@@ -6,8 +6,12 @@ It allows managing of the employee basic data fetched from the backend.
 The following features has been implemented so far:
 * employee list is fetched from the backend
 * on employee row hover a pop up with short description is shown
+* when you open the application, you are "logged in" as the user with the User role by default (selected in the vavigation bar)
 * on employee row click it re-directs to edit form with options to save and cancel changes; changes are sent to the backend as well
-* every employee is removable
+* on X click, an employee should be removed
+* as User you can edit or remove employees who do not have "Admin" or "Manager" position. Otherwise an alert pop up should appear on click.
+* when you switch to Admin, more options should be available - every employee is removable and editable, you can also edit role and position of each employee
+* basic form validation
 
 ### in order to run the app, use the following commands in console:
 in order to download dependencies:

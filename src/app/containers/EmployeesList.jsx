@@ -14,7 +14,7 @@ export class EmployeesList extends React.Component {
       return null;
     } else {
       const employeeData = this.props.employeeList.map(employee => {
-        return <EmployeeData key={ employee.id } id={ employee.id } employee={ employee } userType={ this.props.userType }/>
+        return <EmployeeData key={ employee.id } id={ employee.id } employee={ employee } />
       });
       return (
         <section className='employee-list'>

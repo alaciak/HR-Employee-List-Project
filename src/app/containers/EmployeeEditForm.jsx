@@ -121,7 +121,7 @@ export class EmployeeEditForm extends React.Component {
           </div>
         </div>
         <div className='row employee-data-form_alert-message' style={{ display: this.state.formAlertDisplay }}>All the fields must be completed before saving the form</div>
-        <div className='row employee-data-form_alert-message' style={{ display: this.state.formExperienceAlertDisplay }}>Please provide number of months as an experience</div>
+        <div className='row employee-data-form_alert-message' style={{ display: this.state.formExperienceAlertDisplay }}>Please provide the number of months as an experience</div>
       </section>
     );
   }

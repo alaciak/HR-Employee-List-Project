@@ -112,5 +112,17 @@ exports[`EmployeeEditForm should render if the data are fetched from the server 
       </button>
     </div>
   </div>
+  <div
+    class="row employee-data-form_alert-message"
+    style="display:none;"
+  >
+    All the fields must be completed before saving the form
+  </div>
+  <div
+    class="row employee-data-form_alert-message"
+    style="display:none;"
+  >
+    Please provide number of months as an experience
+  </div>
 </section>
 `;
