@@ -71,13 +71,12 @@ export class EmployeeEditForm extends React.Component {
   }
 
   handleOnClickUpdate = e => {
-    console.log(typeof Number(this.state.employee.experience));
     e.preventDefault();
     if(!this.state.employee.role || !this.state.employee.position || !this.state.employee.experience || !this.state.employee.shortdescript || !this.state.employee.longdescript) {
       this.setState({
         formAlertDisplay: 'block'
       });
-    } else if(typeof Number(this.state.employee.experience) !== 'number') {
+    } else if(isNaN(this.state.employee.experience)) {
       this.setState({
         formExperienceAlertDisplay: 'block'
       });
