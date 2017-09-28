@@ -232,6 +232,9 @@ video {
       background: #c15e07; }
     .employee-data-form .employee-data-form_buttons .btn-cancel {
       background: #202020; }
+  .employee-data-form .employee-data-form_alert-message {
+    color: #a01b0c;
+    font-size: 1.25rem; }
 
 .employee-list {
   padding: 2em; }

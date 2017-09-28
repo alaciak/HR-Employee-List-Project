@@ -122,7 +122,7 @@ exports[`EmployeeEditForm should render if the data are fetched from the server 
     class="row employee-data-form_alert-message"
     style="display:none;"
   >
-    Please provide number of months as an experience
+    Please provide the number of months as an experience
   </div>
 </section>
 `;
