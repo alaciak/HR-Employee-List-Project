@@ -26,22 +26,18 @@ exports[`Nav should render header and nav of the page 1`] = `
           className="navigation-user"
         >
           Logged as:
-          <select
-            className="navigation-user_select"
-            name="loggedIn"
-            onChange={[Function]}
+          <Provider
+            store={
+              Object {
+                "dispatch": [Function],
+                "getState": [Function],
+                "replaceReducer": [Function],
+                "subscribe": [Function],
+              }
+            }
           >
-            <option
-              value="user"
-            >
-              User
-            </option>
-            <option
-              value="admin"
-            >
-              Admin
-            </option>
-          </select>
+            <Connect(UserTypeSelection) />
+          </Provider>
         </div>
       </div>
     </div>

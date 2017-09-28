@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UserTypeSelection should render if the userType is passed 1`] = `
+<select
+  className="navigation-user_select"
+  name="loggedIn"
+  onChange={[Function]}
+  value="admin"
+>
+  <option
+    value="user"
+  >
+    User
+  </option>
+  <option
+    value="admin"
+  >
+    Admin
+  </option>
+</select>
+`;

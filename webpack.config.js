@@ -36,6 +36,15 @@ module.exports = {
           fallback: 'style-loader',
           use: ['css-loader', 'postcss-loader', 'sass-loader']
         })
+      },
+      {
+        test: /\.jpg$/,
+        loader: 'file-loader',
+        query: {
+          name: '[name].[ext]',
+          outputPath: 'dist/img/',
+          publicPath: '../../'
+        }
       }
     ],
   },

@@ -43,7 +43,7 @@ exports[`EmployeeEditForm should render if the data are fetched from the server 
         >
           Role:
           <input
-            disabled=""
+            name="role"
             placeholder=""
             type="text"
             value=""
@@ -54,7 +54,7 @@ exports[`EmployeeEditForm should render if the data are fetched from the server 
         >
           Position:
           <input
-            disabled=""
+            name="position"
             placeholder=""
             type="text"
             value=""

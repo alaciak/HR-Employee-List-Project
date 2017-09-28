@@ -84,4 +84,8 @@
       background: map-get($background-colors, button-cancel);
     }
   }
+  .employee-data-form_alert-message {
+    color: map-get($font-colors, highlight);
+    font-size: 1.25rem;
+  }
 }

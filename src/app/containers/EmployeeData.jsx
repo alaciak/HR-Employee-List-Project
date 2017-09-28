@@ -11,16 +11,46 @@ export class EmployeeData extends React.Component {
 
   constructor(props) {
     super(props);
+    this.state = {
+      alertMessageDispaly: 'none'
+    }
   }
 
   handleOnClickEdit = e => {
-    e.stopPropagation();
-    this.props.history.push(`/edit/${this.props.employee.id}`);
+    if (this.props.userType === 'user' && (this.props.employee.position === 'Manager' || this.props.employee.position === 'Admin')) {
+      this.setState({
+        alertMessageDispaly: 'block'
+      });
+      this.timeOutId = setTimeout(() => {
+        this.setState({
+          alertMessageDispaly: 'none'
+        });
+      }, 2000)
+    } else {
+      e.stopPropagation();
+      this.props.history.push(`/edit/${this.props.employee.id}`);
+    }
   }
 
   handleOnClickRemove = e => {
-    e.stopPropagation();
-    this.props.removeEmployee(this.props.employee.id);
+    if (this.props.userType === 'user' && (this.props.employee.position === 'Manager' || this.props.employee.position === 'Admin')) {
+      e.stopPropagation();
+      this.setState({
+        alertMessageDispaly: 'block'
+      });
+      this.timeOutId = setTimeout(() => {
+        this.setState({
+          alertMessageDispaly: 'none'
+        });
+      },2000)
+    } else {
+      e.stopPropagation();
+      this.props.removeEmployee(this.props.employee.id);
+    }
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.timeOutId);
   }
 
   render() {
@@ -32,6 +62,7 @@ export class EmployeeData extends React.Component {
         <td className='employee-data_remove'>
           <div onClick={ this.handleOnClickRemove }>X</div>
           <div className='employee-data employee-data_description'>{ this.props.employee.shortdescript }</div>
+          <div className='employee-data employee-data_allert-message' style={{display: this.state.alertMessageDispaly }}><div className='employee-data_allert-message_image'></div><p>You do not have a permission to remove or edit this employee</p></div>
         </td>
       </tr>
     );
@@ -39,7 +70,9 @@ export class EmployeeData extends React.Component {
 }
 
 const mapStateToProps = (state) => {
-  return {};
+  return {
+    userType: state.userTypeSelectionReducer.userType
+  };
 };
 
 const mapDispatchToProps = (dispatch) => {
