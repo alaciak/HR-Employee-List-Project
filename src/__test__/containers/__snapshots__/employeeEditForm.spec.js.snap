@@ -116,7 +116,7 @@ exports[`EmployeeEditForm should render if the data are fetched from the server 
     class="row employee-data-form_alert-message"
     style="display:none;"
   >
-    All the fields must be completed before saving the form
+    Complete all the fields before saving the form
   </div>
   <div
     class="row employee-data-form_alert-message"

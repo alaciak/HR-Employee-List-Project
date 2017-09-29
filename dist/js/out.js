@@ -38876,7 +38876,7 @@ var EmployeeData = exports.EmployeeData = function (_React$Component) {
             _react2.default.createElement(
               'p',
               null,
-              'You do not have a permission to remove or edit this employee'
+              'Only administrator can remove or edit this employee'
             )
           )
         )
@@ -42143,7 +42143,7 @@ var EmployeeEditForm = exports.EmployeeEditForm = function (_React$Component) {
         _react2.default.createElement(
           'div',
           { className: 'row employee-data-form_alert-message', style: { display: this.state.formAlertDisplay } },
-          'All the fields must be completed before saving the form'
+          'Complete all the fields before saving the form'
         ),
         _react2.default.createElement(
           'div',

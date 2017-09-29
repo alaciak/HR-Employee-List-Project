@@ -120,7 +120,7 @@ export class EmployeeEditForm extends React.Component {
             <button className='btn btn-cancel' type='button' onClick={ this.handleOnClickCancel }>CANCEL</button>
           </div>
         </div>
-        <div className='row employee-data-form_alert-message' style={{ display: this.state.formAlertDisplay }}>All the fields must be completed before saving the form</div>
+        <div className='row employee-data-form_alert-message' style={{ display: this.state.formAlertDisplay }}>Complete all the fields before saving the form</div>
         <div className='row employee-data-form_alert-message' style={{ display: this.state.formExperienceAlertDisplay }}>Please provide the number of months as an experience</div>
       </section>
     );

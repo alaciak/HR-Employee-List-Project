@@ -58,7 +58,7 @@ export class EmployeeData extends React.Component {
         <td className='employee-data_remove'>
           <div onClick={ this.handleOnClickRemove }>X</div>
           <div className='employee-data employee-data_description'>{ this.props.employee.shortdescript }</div>
-          <div className='employee-data employee-data_allert-message' style={{ display: this.state.alertMessageDispaly }}><div className='employee-data_allert-message_image'></div><p>You do not have a permission to remove or edit this employee</p></div>
+          <div className='employee-data employee-data_allert-message' style={{ display: this.state.alertMessageDispaly }}><div className='employee-data_allert-message_image'></div><p>Only administrator can remove or edit this employee</p></div>
         </td>
       </tr>
     );

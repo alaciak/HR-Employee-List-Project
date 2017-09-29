@@ -156,7 +156,7 @@ video {
         width: 50vw; } }
     @media (min-width: 980px) and (orientation: landscape) {
       .employee-data .employee-data_allert-message {
-        width: 25vw; } }
+        width: 30vw; } }
 
 .employee-data-form {
   padding: 2em; }
