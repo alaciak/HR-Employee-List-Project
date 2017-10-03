@@ -38720,13 +38720,15 @@ var _react2 = _interopRequireDefault(_react);
 
 var _Nav = __webpack_require__(613);
 
+var _Nav2 = _interopRequireDefault(_Nav);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var Main = exports.Main = function Main(props) {
   return _react2.default.createElement(
     'div',
     null,
-    _react2.default.createElement(_Nav.Nav, null),
+    _react2.default.createElement(_Nav2.default, null),
     props.children
   );
 };
@@ -38783,56 +38785,54 @@ var Nav = exports.Nav = function (_React$Component) {
   _createClass(Nav, [{
     key: 'render',
     value: function render() {
+      var t = this.props.t;
+
       return _react2.default.createElement(
-        _reactI18next.I18n,
-        { ns: 'translations' },
-        function (t) {
-          return _react2.default.createElement(
-            'header',
-            { className: 'navigation' },
+        'header',
+        { className: 'navigation' },
+        _react2.default.createElement(
+          'nav',
+          { className: 'container' },
+          _react2.default.createElement(
+            'div',
+            { className: 'row' },
             _react2.default.createElement(
-              'nav',
-              { className: 'container' },
+              'div',
+              { className: 'navigation-logo col-4' },
+              'HR ',
               _react2.default.createElement(
-                'div',
-                { className: 'row' },
-                _react2.default.createElement(
-                  'div',
-                  { className: 'navigation-logo col-4' },
-                  'HR ',
-                  _react2.default.createElement(
-                    'span',
-                    null,
-                    'System '
-                  ),
-                  'Management'
-                ),
-                _react2.default.createElement(_LanguageSelection.LanguageSelection, null),
-                _react2.default.createElement(
-                  'div',
-                  { className: 'navigation-user col-6' },
-                  _react2.default.createElement(
-                    'p',
-                    null,
-                    t('loggedUser'),
-                    ':'
-                  ),
-                  _react2.default.createElement(
-                    _reactRedux.Provider,
-                    { store: _Store2.default },
-                    _react2.default.createElement(_UserTypeSelection2.default, null)
-                  )
-                )
+                'span',
+                null,
+                'System '
+              ),
+              'Management'
+            ),
+            _react2.default.createElement(_LanguageSelection.LanguageSelection, null),
+            _react2.default.createElement(
+              'div',
+              { className: 'navigation-user col-6' },
+              _react2.default.createElement(
+                'p',
+                null,
+                t('loggedUser'),
+                ':'
+              ),
+              _react2.default.createElement(
+                _reactRedux.Provider,
+                { store: _Store2.default },
+                _react2.default.createElement(_UserTypeSelection2.default, null)
               )
             )
-          );
-        }
+          )
+        )
       );
     }
   }]);
 
   return Nav;
 }(_react2.default.Component);
+
+exports.default = (0, _reactI18next.translate)('translations')(Nav);
 
 /***/ }),
 /* 614 */
@@ -38980,15 +38980,9 @@ var LanguageSelection = exports.LanguageSelection = function (_React$Component) 
 
     _this.handleOnClick = function (i18n, language) {
       i18n.changeLanguage(language);
-      if (language === 'en') {
-        _this.setState({
-          selectedLanguage: 'en'
-        });
-      } else {
-        _this.setState({
-          selectedLanguage: 'pl'
-        });
-      }
+      _this.setState({
+        selectedLanguage: language
+      });
     };
 
     _this.state = {
@@ -42322,6 +42316,8 @@ var EmployeesList = exports.EmployeesList = function (_React$Component) {
   }, {
     key: 'render',
     value: function render() {
+      var t = this.props.t;
+
       if (this.props.loading) {
         return null;
       } else {
@@ -42329,60 +42325,54 @@ var EmployeesList = exports.EmployeesList = function (_React$Component) {
           return _react2.default.createElement(_EmployeeData2.default, { key: employee.id, id: employee.id, employee: employee });
         });
         return _react2.default.createElement(
-          _reactI18next.I18n,
-          { ns: 'translations' },
-          function (t) {
-            return _react2.default.createElement(
-              'section',
-              { className: 'employee-list' },
+          'section',
+          { className: 'employee-list' },
+          _react2.default.createElement(
+            'div',
+            { className: 'row' },
+            _react2.default.createElement(
+              'div',
+              { className: 'container' },
               _react2.default.createElement(
-                'div',
-                { className: 'row' },
+                'table',
+                { className: 'employee-list_table col-12' },
                 _react2.default.createElement(
-                  'div',
-                  { className: 'container' },
+                  'caption',
+                  null,
+                  t('employeeList.header')
+                ),
+                _react2.default.createElement(
+                  'thead',
+                  { className: 'employee-list_table-heading' },
                   _react2.default.createElement(
-                    'table',
-                    { className: 'employee-list_table col-12' },
+                    'tr',
+                    null,
                     _react2.default.createElement(
-                      'caption',
+                      'th',
                       null,
-                      t('employeeList.header')
+                      t('employeeList.fullname')
                     ),
                     _react2.default.createElement(
-                      'thead',
-                      { className: 'employee-list_table-heading' },
-                      _react2.default.createElement(
-                        'tr',
-                        null,
-                        _react2.default.createElement(
-                          'th',
-                          null,
-                          t('employeeList.fullname')
-                        ),
-                        _react2.default.createElement(
-                          'th',
-                          null,
-                          t('employeeList.role')
-                        ),
-                        _react2.default.createElement(
-                          'th',
-                          null,
-                          t('employeeList.experience')
-                        ),
-                        _react2.default.createElement('th', null)
-                      )
+                      'th',
+                      null,
+                      t('employeeList.role')
                     ),
                     _react2.default.createElement(
-                      'tbody',
-                      { className: 'employee-list_table-body' },
-                      employeeData
-                    )
+                      'th',
+                      null,
+                      t('employeeList.experience')
+                    ),
+                    _react2.default.createElement('th', null)
                   )
+                ),
+                _react2.default.createElement(
+                  'tbody',
+                  { className: 'employee-list_table-body' },
+                  employeeData
                 )
               )
-            );
-          }
+            )
+          )
         );
       }
     }
@@ -42406,7 +42396,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   };
 };
 
-exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(EmployeesList);
+exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)((0, _reactI18next.translate)('translations')(EmployeesList));
 
 /***/ }),
 /* 649 */
@@ -42500,60 +42490,54 @@ var EmployeeData = exports.EmployeeData = function (_React$Component) {
   }, {
     key: 'render',
     value: function render() {
-      var _this3 = this;
+      var t = this.props.t;
 
       return _react2.default.createElement(
-        _reactI18next.I18n,
-        { ns: 'translations' },
-        function (t) {
-          return _react2.default.createElement(
-            'tr',
-            { id: _this3.props.employee.id, key: _this3.props.employee.id, className: 'employee-data', onClick: _this3.handleOnClickEdit },
+        'tr',
+        { id: this.props.employee.id, key: this.props.employee.id, className: 'employee-data', onClick: this.handleOnClickEdit },
+        _react2.default.createElement(
+          'td',
+          null,
+          this.props.employee.firstname,
+          ' ',
+          this.props.employee.lastname
+        ),
+        _react2.default.createElement(
+          'td',
+          null,
+          this.props.employee.role
+        ),
+        _react2.default.createElement(
+          'td',
+          null,
+          this.props.employee.experience,
+          ' ',
+          t('employeeList.experienceData')
+        ),
+        _react2.default.createElement(
+          'td',
+          { className: 'employee-data_remove' },
+          _react2.default.createElement(
+            'div',
+            { onClick: this.handleOnClickRemove },
+            'X'
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'employee-data employee-data_description' },
+            this.props.employee.shortdescript
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'employee-data employee-data_allert-message', style: { display: this.state.alertMessageDispaly } },
+            _react2.default.createElement('div', { className: 'employee-data_allert-message_image' }),
             _react2.default.createElement(
-              'td',
+              'p',
               null,
-              _this3.props.employee.firstname,
-              ' ',
-              _this3.props.employee.lastname
-            ),
-            _react2.default.createElement(
-              'td',
-              null,
-              _this3.props.employee.role
-            ),
-            _react2.default.createElement(
-              'td',
-              null,
-              _this3.props.employee.experience,
-              ' ',
-              t('employeeList.experienceData')
-            ),
-            _react2.default.createElement(
-              'td',
-              { className: 'employee-data_remove' },
-              _react2.default.createElement(
-                'div',
-                { onClick: _this3.handleOnClickRemove },
-                'X'
-              ),
-              _react2.default.createElement(
-                'div',
-                { className: 'employee-data employee-data_description' },
-                _this3.props.employee.shortdescript
-              ),
-              _react2.default.createElement(
-                'div',
-                { className: 'employee-data employee-data_allert-message', style: { display: _this3.state.alertMessageDispaly } },
-                _react2.default.createElement('div', { className: 'employee-data_allert-message_image' }),
-                _react2.default.createElement(
-                  'p',
-                  null,
-                  t('errorMessage')
-                )
-              )
+              t('errorMessage')
             )
-          );
-        }
+          )
+        )
       );
     }
   }]);
@@ -42580,7 +42564,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   };
 };
 
-exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)((0, _reactRouterDom.withRouter)(EmployeeData));
+exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)((0, _reactRouterDom.withRouter)((0, _reactI18next.translate)('translations')(EmployeeData)));
 
 /***/ }),
 /* 650 */
@@ -45740,107 +45724,101 @@ var EmployeeEditForm = exports.EmployeeEditForm = function (_React$Component) {
   }, {
     key: 'render',
     value: function render() {
-      var _this2 = this;
+      var t = this.props.t;
 
       return _react2.default.createElement(
-        _reactI18next.I18n,
-        { ns: 'translations' },
-        function (t) {
-          return _react2.default.createElement(
-            'section',
-            { className: 'employee-data-form container' },
+        'section',
+        { className: 'employee-data-form container' },
+        _react2.default.createElement(
+          'div',
+          { className: 'row' },
+          _react2.default.createElement(
+            'form',
+            { action: '', name: 'employee-data', className: 'employee-data-form_edit col-12' },
             _react2.default.createElement(
-              'div',
-              { className: 'row' },
+              'fieldset',
+              null,
               _react2.default.createElement(
-                'form',
-                { action: '', name: 'employee-data', className: 'employee-data-form_edit col-12' },
-                _react2.default.createElement(
-                  'fieldset',
-                  null,
-                  _react2.default.createElement(
-                    'legend',
-                    null,
-                    t('editForm.header')
-                  ),
-                  _react2.default.createElement(
-                    'label',
-                    { className: 'employee-data-form_edit-label' },
-                    t('editForm.firstname'),
-                    ':',
-                    _react2.default.createElement('input', { type: 'text', value: _this2.state.employee.firstname, placeholder: _this2.state.employee.firstname, disabled: true })
-                  ),
-                  _react2.default.createElement(
-                    'label',
-                    { className: 'employee-data-form_edit-label' },
-                    t('editForm.lastname'),
-                    ':',
-                    _react2.default.createElement('input', { type: 'text', value: _this2.state.employee.lastname, placeholder: _this2.state.employee.lastname, disabled: true })
-                  ),
-                  _react2.default.createElement(
-                    'label',
-                    { className: 'employee-data-form_edit-label' },
-                    t('editForm.role'),
-                    ':',
-                    _react2.default.createElement('input', { type: 'text', value: _this2.state.employee.role, placeholder: _this2.state.employee.role, disabled: _this2.state.disabled, name: 'role', onChange: _this2.handleOnChange })
-                  ),
-                  _react2.default.createElement(
-                    'label',
-                    { className: 'employee-data-form_edit-label' },
-                    t('editForm.position'),
-                    ':',
-                    _react2.default.createElement('input', { type: 'text', value: _this2.state.employee.position, placeholder: _this2.state.employee.position, disabled: _this2.state.disabled, name: 'position', onChange: _this2.handleOnChange })
-                  ),
-                  _react2.default.createElement(
-                    'label',
-                    { className: 'employee-data-form_edit-label' },
-                    t('editForm.experience'),
-                    ':',
-                    _react2.default.createElement('input', { type: 'text', value: _this2.state.employee.experience, placeholder: _this2.state.employee.experience, name: 'experience', onChange: _this2.handleOnChange })
-                  ),
-                  _react2.default.createElement(
-                    'label',
-                    { className: 'employee-data-form_edit-label' },
-                    t('editForm.shortdescript'),
-                    ':',
-                    _react2.default.createElement('textarea', { className: 'employee-data-form_edit-description', type: 'text', value: _this2.state.employee.shortdescript, placeholder: _this2.state.employee.shortdescript, name: 'shortdescript', onChange: _this2.handleOnChange })
-                  ),
-                  _react2.default.createElement(
-                    'label',
-                    { className: 'employee-data-form_edit-label' },
-                    t('editForm.longdescript'),
-                    ':',
-                    _react2.default.createElement('textarea', { className: 'employee-data-form_edit-description', type: 'text', value: _this2.state.employee.longdescript, placeholder: _this2.state.employee.longdescript, name: 'longdescript', onChange: _this2.handleOnChange })
-                  )
-                )
+                'legend',
+                null,
+                t('editForm.header')
               ),
               _react2.default.createElement(
-                'div',
-                { className: 'row employee-data-form_buttons' },
-                _react2.default.createElement(
-                  'button',
-                  { className: 'btn btn-save', type: 'button', onClick: _this2.handleOnClickUpdate },
-                  t('editForm.saveButton')
-                ),
-                _react2.default.createElement(
-                  'button',
-                  { className: 'btn btn-cancel', type: 'button', onClick: _this2.handleOnClickCancel },
-                  t('editForm.cancelButton')
-                )
+                'label',
+                { className: 'employee-data-form_edit-label' },
+                t('editForm.firstname'),
+                ':',
+                _react2.default.createElement('input', { type: 'text', value: this.state.employee.firstname, placeholder: this.state.employee.firstname, disabled: true })
+              ),
+              _react2.default.createElement(
+                'label',
+                { className: 'employee-data-form_edit-label' },
+                t('editForm.lastname'),
+                ':',
+                _react2.default.createElement('input', { type: 'text', value: this.state.employee.lastname, placeholder: this.state.employee.lastname, disabled: true })
+              ),
+              _react2.default.createElement(
+                'label',
+                { className: 'employee-data-form_edit-label' },
+                t('editForm.role'),
+                ':',
+                _react2.default.createElement('input', { type: 'text', value: this.state.employee.role, placeholder: this.state.employee.role, disabled: this.state.disabled, name: 'role', onChange: this.handleOnChange })
+              ),
+              _react2.default.createElement(
+                'label',
+                { className: 'employee-data-form_edit-label' },
+                t('editForm.position'),
+                ':',
+                _react2.default.createElement('input', { type: 'text', value: this.state.employee.position, placeholder: this.state.employee.position, disabled: this.state.disabled, name: 'position', onChange: this.handleOnChange })
+              ),
+              _react2.default.createElement(
+                'label',
+                { className: 'employee-data-form_edit-label' },
+                t('editForm.experience'),
+                ':',
+                _react2.default.createElement('input', { type: 'text', value: this.state.employee.experience, placeholder: this.state.employee.experience, name: 'experience', onChange: this.handleOnChange })
+              ),
+              _react2.default.createElement(
+                'label',
+                { className: 'employee-data-form_edit-label' },
+                t('editForm.shortdescript'),
+                ':',
+                _react2.default.createElement('textarea', { className: 'employee-data-form_edit-description', type: 'text', value: this.state.employee.shortdescript, placeholder: this.state.employee.shortdescript, name: 'shortdescript', onChange: this.handleOnChange })
+              ),
+              _react2.default.createElement(
+                'label',
+                { className: 'employee-data-form_edit-label' },
+                t('editForm.longdescript'),
+                ':',
+                _react2.default.createElement('textarea', { className: 'employee-data-form_edit-description', type: 'text', value: this.state.employee.longdescript, placeholder: this.state.employee.longdescript, name: 'longdescript', onChange: this.handleOnChange })
               )
-            ),
-            _react2.default.createElement(
-              'div',
-              { className: 'row employee-data-form_alert-message', style: { display: _this2.state.formAlertDisplay } },
-              t('editForm.formAlert')
-            ),
-            _react2.default.createElement(
-              'div',
-              { className: 'row employee-data-form_alert-message', style: { display: _this2.state.formExperienceAlertDisplay } },
-              t('editForm.formExperienceAlert')
             )
-          );
-        }
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'row employee-data-form_buttons' },
+            _react2.default.createElement(
+              'button',
+              { className: 'btn btn-save', type: 'button', onClick: this.handleOnClickUpdate },
+              t('editForm.saveButton')
+            ),
+            _react2.default.createElement(
+              'button',
+              { className: 'btn btn-cancel', type: 'button', onClick: this.handleOnClickCancel },
+              t('editForm.cancelButton')
+            )
+          )
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'row employee-data-form_alert-message', style: { display: this.state.formAlertDisplay } },
+          t('editForm.formAlert')
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'row employee-data-form_alert-message', style: { display: this.state.formExperienceAlertDisplay } },
+          t('editForm.formExperienceAlert')
+        )
       );
     }
   }]);
@@ -45871,7 +45849,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   };
 };
 
-exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)((0, _reactRouterDom.withRouter)(EmployeeEditForm));
+exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)((0, _reactRouterDom.withRouter)((0, _reactI18next.translate)('translations')(EmployeeEditForm)));
 
 /***/ }),
 /* 677 */
