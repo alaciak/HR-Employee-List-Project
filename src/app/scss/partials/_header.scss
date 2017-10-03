@@ -26,21 +26,47 @@
 
   .navigation-user {
     float: right;
-    font-size: 0.7em;
-    @media (min-width: 380px) {
-      font-size: 0.9em;
-    }
-    @media (min-width: 640px) {
-      font-size: 1.25em;
-    }
-
-    .navigation-user_select {
-      margin-left: 1em;
+    padding-right: 1em;
+    p {
+      display: inline-block;
+      padding-right: .5rem;
       font-size: 0.7rem;
       @media (min-width: 380px) {
         font-size: 0.9rem;
       }
       @media (min-width: 640px) {
+        font-size: 1.25rem;
+      }
+    }
+    .navigation-user_select {
+      font-size: 0.7rem;
+      @media (min-width: 380px) {
+        font-size: 0.9rem;
+      }
+      @media (min-width: 640px) {
+        font-size: 1.25rem;
+      }
+    }
+  }
+  .navigation-language {
+    button {
+      margin-right: .2rem;
+      width: 2rem;
+      text-align: center;
+      font-size: .5rem;
+      background: map-get($background-colors, table-rows-even);
+      color: map-get($font-colors, main);
+      border-radius: .3rem;
+      border: none;
+      &:focus {
+        background: orange;
+      }
+      @media (min-width: 380px) {
+        width: 2.5rem;
+        font-size: 0.9rem;
+      }
+      @media (min-width: 640px) {
+        width: 3rem;
         font-size: 1.25rem;
       }
     }

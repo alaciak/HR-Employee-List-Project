@@ -18,7 +18,12 @@
   th {
     padding: 0.7em;
   }
-
+  th:first-of-type {
+    width: 35%;
+  }
+  th:nth-of-type(3) {
+    width: 40%;
+  }
   tr {
     font-size: 0.8em;
     color: map-get($font-colors, main);

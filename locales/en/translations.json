@@ -1,0 +1,25 @@
+{
+  "employeeList": {
+    "header": "Employee List",
+    "full-name": "Full Name",
+    "role": "Role",
+    "experience": "Experience",
+    "experienceData": "Month(s)"
+  },
+  "loggedUser": "Logged as",
+  "errorMessage":"Only administrator can remove or edit this employee",
+  "editForm": {
+    "header": "Employee Data",
+    "firstname": "First name",
+    "lastname": "Last name",
+    "role": "Role",
+    "position": "Position",
+    "experience": "Experience (months)",
+    "shortdescript": "Short description",
+    "longdescript": "Long description",
+    "saveButton": "SAVE",
+    "cancelButton": "CANCEL",
+    "formAlert": "Complete all the fields before saving the form",
+    "formExperienceAlert": "Please provide the number of months as an experience"
+  }
+}

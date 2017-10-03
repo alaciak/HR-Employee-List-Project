@@ -79,15 +79,18 @@ video {
           font-size: 1.25em; } }
   .navigation .navigation-user {
     float: right;
-    font-size: 0.7em; }
-    @media (min-width: 380px) {
-      .navigation .navigation-user {
-        font-size: 0.9em; } }
-    @media (min-width: 640px) {
-      .navigation .navigation-user {
-        font-size: 1.25em; } }
+    padding-right: 1em; }
+    .navigation .navigation-user p {
+      display: inline-block;
+      padding-right: .5rem;
+      font-size: 0.7rem; }
+      @media (min-width: 380px) {
+        .navigation .navigation-user p {
+          font-size: 0.9rem; } }
+      @media (min-width: 640px) {
+        .navigation .navigation-user p {
+          font-size: 1.25rem; } }
     .navigation .navigation-user .navigation-user_select {
-      margin-left: 1em;
       font-size: 0.7rem; }
       @media (min-width: 380px) {
         .navigation .navigation-user .navigation-user_select {
@@ -95,6 +98,25 @@ video {
       @media (min-width: 640px) {
         .navigation .navigation-user .navigation-user_select {
           font-size: 1.25rem; } }
+  .navigation .navigation-language button {
+    margin-right: .2rem;
+    width: 2rem;
+    text-align: center;
+    font-size: .5rem;
+    background: #fcfaf9;
+    color: #352c2b;
+    border-radius: .3rem;
+    border: none; }
+    .navigation .navigation-language button:focus {
+      background: orange; }
+    @media (min-width: 380px) {
+      .navigation .navigation-language button {
+        width: 2.5rem;
+        font-size: 0.9rem; } }
+    @media (min-width: 640px) {
+      .navigation .navigation-language button {
+        width: 3rem;
+        font-size: 1.25rem; } }
 
 .employee-data {
   position: relative; }
@@ -251,6 +273,10 @@ video {
   .employee-list_table td,
   .employee-list_table th {
     padding: 0.7em; }
+  .employee-list_table th:first-of-type {
+    width: 35%; }
+  .employee-list_table th:nth-of-type(3) {
+    width: 40%; }
   .employee-list_table tr {
     font-size: 0.8em;
     color: #352c2b; }

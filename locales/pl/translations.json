@@ -1,0 +1,25 @@
+{
+  "employeeList": {
+    "header": "Lista Pracowników",
+    "full-name": "Imię i Nazwisko",
+    "role": "Rola",
+    "experience": "Doświadczenie",
+    "experienceData": "mies."
+  },
+  "loggedUser": "Zalogowany jako",
+  "errorMessage":"Tylko administrator może usunąć lub edytować tego pracownika",
+  "editForm": {
+    "header": "Dane Pracownika",
+    "firstname": "Imię",
+    "lastname": "Nazwisko",
+    "role": "Rola",
+    "position": "Stanowisko",
+    "experience": "Doswiadczenie (miesiące)",
+    "shortdescript": "Krótki opis",
+    "longdescript": "Pełen opis",
+    "saveButton": "ZAPISZ",
+    "cancelButton": "ANULUJ",
+    "formAlert": "Wypełnij wszystkie pola przed zapisaniem formularza",
+    "formExperienceAlert": "Doświadczenie pracownika powinno być liczbą wyrażoną w miesiącach"
+  }
+}

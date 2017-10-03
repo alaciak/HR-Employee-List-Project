@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { removeEmployee } from '../actions/employeeListActions';
+import { I18n, Trans } from 'react-i18next';
 
 export class EmployeeData extends React.Component {
   static propTypes = {
@@ -51,16 +52,22 @@ export class EmployeeData extends React.Component {
 
   render() {
     return (
-      <tr id={ this.props.employee.id } key={ this.props.employee.id } className='employee-data' onClick={ this.handleOnClickEdit }>
-        <td>{ this.props.employee.firstname } { this.props.employee.lastname }</td>
-        <td>{ this.props.employee.role }</td>
-        <td>{ this.props.employee.experience } month(s)</td>
-        <td className='employee-data_remove'>
-          <div onClick={ this.handleOnClickRemove }>X</div>
-          <div className='employee-data employee-data_description'>{ this.props.employee.shortdescript }</div>
-          <div className='employee-data employee-data_allert-message' style={{ display: this.state.alertMessageDispaly }}><div className='employee-data_allert-message_image'></div><p>Only administrator can remove or edit this employee</p></div>
-        </td>
-      </tr>
+      <I18n ns="translations">
+        {
+          (t) => (
+            <tr id={ this.props.employee.id } key={ this.props.employee.id } className='employee-data' onClick={ this.handleOnClickEdit }>
+              <td>{ this.props.employee.firstname } { this.props.employee.lastname }</td>
+              <td>{ this.props.employee.role }</td>
+              <td>{ this.props.employee.experience } {t('employeeList.experienceData')}</td>
+              <td className='employee-data_remove'>
+                <div onClick={ this.handleOnClickRemove }>X</div>
+                <div className='employee-data employee-data_description'>{ this.props.employee.shortdescript }</div>
+                <div className='employee-data employee-data_allert-message' style={{ display: this.state.alertMessageDispaly }}><div className='employee-data_allert-message_image'></div><p>{t('errorMessage')}</p></div>
+              </td>
+            </tr>
+          )
+        }
+      </I18n>
     );
   }
 }
