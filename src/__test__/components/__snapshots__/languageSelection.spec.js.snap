@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LanguageSelection should render LanguageSelection component 1`] = `
+<div
+  className="navigation-language col-2"
+>
+  <button
+    onClick={[Function]}
+    style={
+      Object {
+        "color": "#e5a357",
+      }
+    }
+    type="button"
+  >
+    ENG
+  </button>
+  <button
+    onClick={[Function]}
+    style={
+      Object {
+        "color": "#fcfaf9",
+      }
+    }
+    type="button"
+  >
+    PL
+  </button>
+</div>
+`;

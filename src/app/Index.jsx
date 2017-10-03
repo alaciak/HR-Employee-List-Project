@@ -1,13 +1,17 @@
 import ReactDOM from "react-dom";
 import React from "react";
 import { Provider } from "react-redux";
-
 import { App } from "./containers/App.jsx";
 import store from "./Store.jsx";
 import './scss/style.scss';
+import { I18nextProvider } from 'react-i18next';
+import i18n from './i18n';
 
 document.addEventListener('DOMContentLoaded', function() {
 
   ReactDOM.render(
-    <App/>, document.querySelector('#app'));
+    <I18nextProvider i18n={ i18n }>
+      <App/>
+    </I18nextProvider>,
+    document.querySelector('#app'));
 });
