@@ -103,12 +103,9 @@ video {
     width: 2rem;
     text-align: center;
     font-size: .5rem;
-    background: #fcfaf9;
     color: #352c2b;
     border-radius: .3rem;
     border: none; }
-    .navigation .navigation-language button:focus {
-      background: orange; }
     @media (min-width: 380px) {
       .navigation .navigation-language button {
         width: 2.5rem;

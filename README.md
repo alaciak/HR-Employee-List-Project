@@ -12,6 +12,7 @@ The following features has been implemented so far:
 * as User you can edit or remove employees who do not have "Admin" or "Manager" position. Otherwise an alert pop up should appear on click.
 * when you switch to Admin, more options should be available - every employee is removable and editable, you can also edit role and position of each employee
 * basic form validation
+* basic internationalization (english and polish version) - when you click on ENG or PL buttons
 
 ### in order to run the app, use the following commands in console:
 in order to download dependencies:

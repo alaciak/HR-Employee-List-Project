@@ -25,7 +25,7 @@ export class EmployeeData extends React.Component {
           this.setState({
             alertMessageDispaly: 'none'
           });
-        }, 2000)
+        }, 3000)
       });
       return false;
     }

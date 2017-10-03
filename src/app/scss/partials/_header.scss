@@ -54,13 +54,9 @@
       width: 2rem;
       text-align: center;
       font-size: .5rem;
-      background: map-get($background-colors, table-rows-even);
       color: map-get($font-colors, main);
       border-radius: .3rem;
       border: none;
-      &:focus {
-        background: orange;
-      }
       @media (min-width: 380px) {
         width: 2.5rem;
         font-size: 0.9rem;
