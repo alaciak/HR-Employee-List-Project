@@ -1,7 +1,7 @@
 {
   "employeeList": {
     "header": "Employee List",
-    "full-name": "Full Name",
+    "fullname": "Full Name",
     "role": "Role",
     "experience": "Experience",
     "experienceData": "Month(s)"

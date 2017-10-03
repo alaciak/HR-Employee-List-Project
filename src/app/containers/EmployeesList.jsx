@@ -2,7 +2,7 @@ import React from 'react';
 import EmployeeData from './EmployeeData.jsx';
 import { connect } from 'react-redux';
 import { getList } from '../actions/employeeListActions';
-import { I18n, Trans } from 'react-i18next';
+import { I18n } from 'react-i18next';
 
 export class EmployeesList extends React.Component {
 
@@ -28,7 +28,7 @@ export class EmployeesList extends React.Component {
                       <caption>{t('employeeList.header')}</caption>
                       <thead className='employee-list_table-heading'>
                         <tr>
-                          <th>{t('employeeList.full-name')}</th>
+                          <th>{t('employeeList.fullname')}</th>
                           <th>{t('employeeList.role')}</th>
                           <th>{t('employeeList.experience')}</th>
                           <th></th>
