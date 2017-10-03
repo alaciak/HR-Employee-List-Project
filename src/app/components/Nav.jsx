@@ -15,9 +15,9 @@ export class Nav extends React.Component {
             <header className='navigation'>
               <nav className='container'>
                 <div className='row'>
-                  <div className='navigation-logo col-6'>HR <span>System</span> Management</div>
+                  <div className='navigation-logo col-4'>HR <span>System </span>Management</div>
                     <LanguageSelection />
-                    <div className='navigation-user col-3'>
+                    <div className='navigation-user col-6'>
                       <p>{t('loggedUser')}:</p>
                       <Provider store={ store }>
                         <UserTypeSelection />

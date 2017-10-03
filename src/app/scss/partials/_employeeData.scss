@@ -2,12 +2,12 @@
   position: relative;
 
   .employee-data_description {
-    margin-top: 1.5em;
-    margin-left: -6.5em;
+    margin-top: 1.5rem;
+    margin-left: -6.5rem;
     position: absolute;
     display: none;
     text-align: center;
-    font-size: .8em;
+    font-size: .8rem;
     width: 10em;
     height: 4.5em;
     border: 1px solid map-get($background-colors, table-heading);
@@ -16,7 +16,7 @@
     @media (min-width: 640px) {
       width: 11.5em;
       height: 5em;
-      font-size: 1em;
+      font-size: 1rem;
     }
     @media (min-width: 1000px) {
       width: 12.5em;
@@ -67,6 +67,7 @@
       width: 50vw;
     }
     @media (min-width: 980px) and (orientation: landscape){
+      font-size: .7rem;
       width: 30vw;
     }
   }

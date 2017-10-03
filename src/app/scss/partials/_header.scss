@@ -6,27 +6,31 @@
   color: map-get($font-colors, header);
 
   .navigation-logo {
-    font-size: 0.8em;
-    word-spacing: 0.5em;
+    font-size: .8rem;
+    word-spacing: 0.5rem;
+    padding-right: .5rem;
     @media (min-width: 380px) {
-      font-size: 0.9em;
+      font-size: 0.9rem;
     }
     @media (min-width: 640px) {
-      font-size: 1.25em;
+      font-size: 1.25rem;
     }
 
     span {
-      font-size: 0.9em;
+      font-size: 0.9rem;
+      font-weight: bold;
       color: map-get($font-colors, highlight);
       @media (min-width: 640px) {
-        font-size: 1.25em;
+        font-size: 1.25rem;
       }
     }
   }
 
   .navigation-user {
-    float: right;
-    padding-right: 1em;
+    padding-right: 1rem;
+    display: flex;
+    align-items:center;
+    justify-content: center;
     p {
       display: inline-block;
       padding-right: .5rem;
@@ -40,6 +44,7 @@
     }
     .navigation-user_select {
       font-size: 0.7rem;
+      float: right;
       @media (min-width: 380px) {
         font-size: 0.9rem;
       }
@@ -49,14 +54,23 @@
     }
   }
   .navigation-language {
+    border-left: 1px solid map-get($background-colors, table-rows-even);
+    padding-left: .5rem;
     button {
       margin-right: .2rem;
       width: 2rem;
+      min-height: 1rem;
       text-align: center;
-      font-size: .5rem;
-      color: map-get($font-colors, main);
-      border-radius: .3rem;
+      font-size: 0.7rem;
+      background: transparent;
       border: none;
+      &:hover {
+        cursor: pointer;
+        opacity: .8;
+      }
+      &:focus {
+        outline-color: map-get($background-colors, table-rows-highlight);
+      }
       @media (min-width: 380px) {
         width: 2.5rem;
         font-size: 0.9rem;

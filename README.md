@@ -41,6 +41,7 @@ after successfully running the both servers, the app should be available at: htt
 * React
 * React Router
 * Redux
+* i18n
 * Jest (unit tests)
 * Sass
 * Fetch

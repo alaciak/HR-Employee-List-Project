@@ -7,7 +7,7 @@
     "experienceData": "Month(s)"
   },
   "loggedUser": "Logged as",
-  "errorMessage":"Only administrator can remove or edit this employee",
+  "errorMessage": "Only administrator can remove or edit this employee",
   "editForm": {
     "header": "Employee Data",
     "firstname": "First name",

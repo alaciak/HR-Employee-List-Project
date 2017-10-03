@@ -38798,19 +38798,19 @@ var Nav = exports.Nav = function (_React$Component) {
                 { className: 'row' },
                 _react2.default.createElement(
                   'div',
-                  { className: 'navigation-logo col-6' },
+                  { className: 'navigation-logo col-4' },
                   'HR ',
                   _react2.default.createElement(
                     'span',
                     null,
-                    'System'
+                    'System '
                   ),
-                  ' Management'
+                  'Management'
                 ),
                 _react2.default.createElement(_LanguageSelection.LanguageSelection, null),
                 _react2.default.createElement(
                   'div',
-                  { className: 'navigation-user col-3' },
+                  { className: 'navigation-user col-6' },
                   _react2.default.createElement(
                     'p',
                     null,
@@ -38978,39 +38978,21 @@ var LanguageSelection = exports.LanguageSelection = function (_React$Component) 
 
     var _this = _possibleConstructorReturn(this, (LanguageSelection.__proto__ || Object.getPrototypeOf(LanguageSelection)).call(this, props));
 
-    _this.handleOnClickEnglish = function (i18n) {
-      i18n.changeLanguage('en');
-      if (_this.state.buttonEnglish === '#fcfaf9') {
+    _this.handleOnClick = function (i18n, language) {
+      i18n.changeLanguage(language);
+      if (language === 'en') {
         _this.setState({
-          buttonEnglish: '#e5a357',
-          buttonPolish: '#fcfaf9'
+          selectedLanguage: 'en'
         });
       } else {
         _this.setState({
-          buttonEnglish: '#fcfaf9',
-          buttonPolish: '#e5a357'
-        });
-      }
-    };
-
-    _this.handleOnClickPolish = function (i18n) {
-      i18n.changeLanguage('pl');
-      if (_this.state.buttonPolish === '#fcfaf9') {
-        _this.setState({
-          buttonPolish: '#e5a357',
-          buttonEnglish: '#fcfaf9'
-        });
-      } else {
-        _this.setState({
-          buttonPolish: '#fcfaf9',
-          buttonEnglish: '#e5a357'
+          selectedLanguage: 'pl'
         });
       }
     };
 
     _this.state = {
-      buttonEnglish: '#e5a357',
-      buttonPolish: '#fcfaf9'
+      selectedLanguage: 'en'
     };
     return _this;
   }
@@ -39020,6 +39002,8 @@ var LanguageSelection = exports.LanguageSelection = function (_React$Component) 
     value: function render() {
       var _this2 = this;
 
+      var selectedEnglish = this.state.selectedLanguage === 'en' ? '#e5a357' : '#fcfaf9';
+      var selectedPolish = this.state.selectedLanguage === 'pl' ? '#e5a357' : '#fcfaf9';
       return _react2.default.createElement(
         _reactI18next.I18n,
         { ns: 'translations' },
@@ -39027,18 +39011,18 @@ var LanguageSelection = exports.LanguageSelection = function (_React$Component) 
           var i18n = _ref.i18n;
           return _react2.default.createElement(
             'div',
-            { className: 'navigation-language col-3' },
+            { className: 'navigation-language col-2' },
             _react2.default.createElement(
               'button',
-              { type: 'button', style: { backgroundColor: _this2.state.buttonEnglish }, onClick: function onClick() {
-                  return _this2.handleOnClickEnglish(i18n);
+              { type: 'button', style: { color: selectedEnglish }, onClick: function onClick() {
+                  return _this2.handleOnClick(i18n, 'en');
                 } },
               'ENG'
             ),
             _react2.default.createElement(
               'button',
-              { type: 'button', style: { backgroundColor: _this2.state.buttonPolish }, onClick: function onClick() {
-                  return _this2.handleOnClickPolish(i18n);
+              { type: 'button', style: { color: selectedPolish }, onClick: function onClick() {
+                  return _this2.handleOnClick(i18n, 'pl');
                 } },
               'PL'
             )

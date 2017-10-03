@@ -6,48 +6,32 @@ export class LanguageSelection extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      buttonEnglish: '#e5a357',
-      buttonPolish: '#fcfaf9'
+      selectedLanguage: 'en'
     }
   }
 
-  handleOnClickEnglish = (i18n) => {
-    i18n.changeLanguage('en');
-    if(this.state.buttonEnglish === '#fcfaf9') {
+  handleOnClick = (i18n, language) => {
+    i18n.changeLanguage(language);
+    if(language === 'en') {
       this.setState({
-        buttonEnglish: '#e5a357',
-        buttonPolish: '#fcfaf9'
+        selectedLanguage: 'en'
       });
     } else {
       this.setState({
-        buttonEnglish: '#fcfaf9',
-        buttonPolish: '#e5a357'
-      });
-    }
-  }
-
-  handleOnClickPolish = (i18n) => {
-    i18n.changeLanguage('pl');
-    if(this.state.buttonPolish === '#fcfaf9') {
-      this.setState({
-        buttonPolish: '#e5a357',
-        buttonEnglish: '#fcfaf9'
-      });
-    } else {
-      this.setState({
-        buttonPolish: '#fcfaf9',
-        buttonEnglish: '#e5a357'
+        selectedLanguage: 'pl'
       });
     }
   }
 
   render() {
+    const selectedEnglish = (this.state.selectedLanguage === 'en')? '#e5a357' : '#fcfaf9';
+    const selectedPolish = (this.state.selectedLanguage === 'pl')? '#e5a357' : '#fcfaf9';
     return (
       <I18n ns="translations">
         {(t, { i18n }) => (
-          <div className='navigation-language col-3'>
-            <button type='button' style={{ backgroundColor: this.state.buttonEnglish }} onClick={ () => this.handleOnClickEnglish(i18n) }>ENG</button>
-            <button type='button' style={{ backgroundColor: this.state.buttonPolish }} onClick={ () => this.handleOnClickPolish(i18n) }>PL</button>
+          <div className='navigation-language col-2'>
+            <button type='button' style={{ color: selectedEnglish }} onClick={ () => this.handleOnClick(i18n, 'en') }>ENG</button>
+            <button type='button' style={{ color: selectedPolish }} onClick={ () => this.handleOnClick(i18n, 'pl') }>PL</button>
           </div>)}
       </I18n>
     );
