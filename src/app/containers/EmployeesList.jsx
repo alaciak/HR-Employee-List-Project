@@ -2,7 +2,7 @@ import React from 'react';
 import EmployeeData from './EmployeeData.jsx';
 import { connect } from 'react-redux';
 import { getList } from '../actions/employeeListActions';
-import { I18n } from 'react-i18next';
+import { translate } from 'react-i18next';
 
 export class EmployeesList extends React.Component {
 
@@ -11,6 +11,7 @@ export class EmployeesList extends React.Component {
   }
 
   render() {
+    const { t } = this.props;
     if (this.props.loading) {
       return null;
     } else {
@@ -18,32 +19,26 @@ export class EmployeesList extends React.Component {
         return <EmployeeData key={ employee.id } id={ employee.id } employee={ employee } />
       });
       return (
-        <I18n ns="translations">
-          {
-            (t) => (
-              <section className='employee-list'>
-                <div className='row'>
-                  <div className='container'>
-                    <table className='employee-list_table col-12'>
-                      <caption>{t('employeeList.header')}</caption>
-                      <thead className='employee-list_table-heading'>
-                        <tr>
-                          <th>{t('employeeList.fullname')}</th>
-                          <th>{t('employeeList.role')}</th>
-                          <th>{t('employeeList.experience')}</th>
-                          <th></th>
-                        </tr>
-                      </thead>
-                      <tbody className='employee-list_table-body'>
-                        { employeeData }
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
-              </section>
-            )
-          }
-        </I18n>
+        <section className='employee-list'>
+          <div className='row'>
+            <div className='container'>
+              <table className='employee-list_table col-12'>
+                <caption>{t('employeeList.header')}</caption>
+                <thead className='employee-list_table-heading'>
+                  <tr>
+                    <th>{t('employeeList.fullname')}</th>
+                    <th>{t('employeeList.role')}</th>
+                    <th>{t('employeeList.experience')}</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody className='employee-list_table-body'>
+                  { employeeData }
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
       );
     }
   }
@@ -64,4 +59,4 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(EmployeesList);
+export default connect(mapStateToProps, mapDispatchToProps)(translate('translations')(EmployeesList));

@@ -17,7 +17,8 @@ exports[`EmployeeData should render if the employee object is passed 1`] = `
   </td>
   <td>
     testExperience
-     month(s)
+     
+    employeeList.experienceData
   </td>
   <td
     className="employee-data_remove"
@@ -44,7 +45,7 @@ exports[`EmployeeData should render if the employee object is passed 1`] = `
         className="employee-data_allert-message_image"
       />
       <p>
-        Only administrator can remove or edit this employee
+        errorMessage
       </p>
     </div>
   </td>

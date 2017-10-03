@@ -14,12 +14,12 @@ exports[`EmployeeEditForm should render if the data are fetched from the server 
     >
       <fieldset>
         <legend>
-          Employee Data
+          editForm.header
         </legend>
         <label
           class="employee-data-form_edit-label"
         >
-          First name:
+          editForm.firstname:
           <input
             disabled=""
             placeholder=""
@@ -30,7 +30,7 @@ exports[`EmployeeEditForm should render if the data are fetched from the server 
         <label
           class="employee-data-form_edit-label"
         >
-          Last name:
+          editForm.lastname:
           <input
             disabled=""
             placeholder=""
@@ -41,7 +41,7 @@ exports[`EmployeeEditForm should render if the data are fetched from the server 
         <label
           class="employee-data-form_edit-label"
         >
-          Role:
+          editForm.role:
           <input
             name="role"
             placeholder=""
@@ -52,7 +52,7 @@ exports[`EmployeeEditForm should render if the data are fetched from the server 
         <label
           class="employee-data-form_edit-label"
         >
-          Position:
+          editForm.position:
           <input
             name="position"
             placeholder=""
@@ -63,7 +63,7 @@ exports[`EmployeeEditForm should render if the data are fetched from the server 
         <label
           class="employee-data-form_edit-label"
         >
-          Experience (months):
+          editForm.experience:
           <input
             name="experience"
             placeholder=""
@@ -74,7 +74,7 @@ exports[`EmployeeEditForm should render if the data are fetched from the server 
         <label
           class="employee-data-form_edit-label"
         >
-          Short description:
+          editForm.shortdescript:
           <textarea
             class="employee-data-form_edit-description"
             name="shortdescript"
@@ -85,7 +85,7 @@ exports[`EmployeeEditForm should render if the data are fetched from the server 
         <label
           class="employee-data-form_edit-label"
         >
-          Long description:
+          editForm.longdescript:
           <textarea
             class="employee-data-form_edit-description"
             name="longdescript"
@@ -102,13 +102,13 @@ exports[`EmployeeEditForm should render if the data are fetched from the server 
         class="btn btn-save"
         type="button"
       >
-        SAVE
+        editForm.saveButton
       </button>
       <button
         class="btn btn-cancel"
         type="button"
       >
-        CANCEL
+        editForm.cancelButton
       </button>
     </div>
   </div>
@@ -116,13 +116,13 @@ exports[`EmployeeEditForm should render if the data are fetched from the server 
     class="row employee-data-form_alert-message"
     style="display:none;"
   >
-    Complete all the fields before saving the form
+    editForm.formAlert
   </div>
   <div
     class="row employee-data-form_alert-message"
     style="display:none;"
   >
-    Please provide the number of months as an experience
+    editForm.formExperienceAlert
   </div>
 </section>
 `;

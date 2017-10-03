@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { getEmployee, updateEmployee } from '../actions/employeeEditFormActions';
-import { I18n } from 'react-i18next';
+import { translate } from 'react-i18next';
 
 export class EmployeeEditForm extends React.Component {
   static propTypes = {
@@ -87,49 +87,44 @@ export class EmployeeEditForm extends React.Component {
   }
 
   render() {
+    const { t } = this.props;
     return (
-      <I18n ns="translations">
-        {
-          (t) => (
-            <section className='employee-data-form container'>
-              <div className='row'>
-                <form action='' name='employee-data' className='employee-data-form_edit col-12'>
-                  <fieldset>
-                    <legend>{t('editForm.header')}</legend>
-                    <label className='employee-data-form_edit-label'>{t('editForm.firstname')}:
-                      <input type='text' value={ this.state.employee.firstname } placeholder={ this.state.employee.firstname } disabled></input>
-                    </label>
-                    <label className='employee-data-form_edit-label'>{t('editForm.lastname')}:
-                      <input type='text' value={ this.state.employee.lastname } placeholder={ this.state.employee.lastname } disabled></input>
-                    </label>
-                    <label className='employee-data-form_edit-label'>{t('editForm.role')}:
-                      <input type='text' value={ this.state.employee.role } placeholder={ this.state.employee.role } disabled={ this.state.disabled } name='role' onChange={ this.handleOnChange }></input>
-                    </label>
-                    <label className='employee-data-form_edit-label'>{t('editForm.position')}:
-                      <input type='text' value={ this.state.employee.position } placeholder={ this.state.employee.position } disabled={ this.state.disabled } name='position' onChange={ this.handleOnChange }></input>
-                    </label>
-                    <label className='employee-data-form_edit-label'>{t('editForm.experience')}:
-                      <input type='text' value={ this.state.employee.experience } placeholder={ this.state.employee.experience}  name='experience' onChange={ this.handleOnChange }></input>
-                    </label>
-                    <label className='employee-data-form_edit-label'>{t('editForm.shortdescript')}:
-                      <textarea className='employee-data-form_edit-description' type='text' value={ this.state.employee.shortdescript } placeholder={ this.state.employee.shortdescript } name='shortdescript' onChange={this.handleOnChange}></textarea>
-                    </label>
-                    <label className='employee-data-form_edit-label'>{t('editForm.longdescript')}:
-                      <textarea className='employee-data-form_edit-description' type='text' value={ this.state.employee.longdescript } placeholder={ this.state.employee.longdescript } name='longdescript' onChange={this.handleOnChange}></textarea>
-                    </label>
-                  </fieldset>
-                </form>
-                <div className='row employee-data-form_buttons'>
-                  <button className='btn btn-save' type='button' onClick={ this.handleOnClickUpdate }>{t('editForm.saveButton')}</button>
-                  <button className='btn btn-cancel' type='button' onClick={ this.handleOnClickCancel }>{t('editForm.cancelButton')}</button>
-                </div>
-              </div>
-              <div className='row employee-data-form_alert-message' style={{ display: this.state.formAlertDisplay }}>{t('editForm.formAlert')}</div>
-              <div className='row employee-data-form_alert-message' style={{ display: this.state.formExperienceAlertDisplay }}>{t('editForm.formExperienceAlert')}</div>
-            </section>
-          )
-        }
-      </I18n>
+      <section className='employee-data-form container'>
+        <div className='row'>
+          <form action='' name='employee-data' className='employee-data-form_edit col-12'>
+            <fieldset>
+              <legend>{t('editForm.header')}</legend>
+              <label className='employee-data-form_edit-label'>{t('editForm.firstname')}:
+                <input type='text' value={ this.state.employee.firstname } placeholder={ this.state.employee.firstname } disabled></input>
+              </label>
+              <label className='employee-data-form_edit-label'>{t('editForm.lastname')}:
+                <input type='text' value={ this.state.employee.lastname } placeholder={ this.state.employee.lastname } disabled></input>
+              </label>
+              <label className='employee-data-form_edit-label'>{t('editForm.role')}:
+                <input type='text' value={ this.state.employee.role } placeholder={ this.state.employee.role } disabled={ this.state.disabled } name='role' onChange={ this.handleOnChange }></input>
+              </label>
+              <label className='employee-data-form_edit-label'>{t('editForm.position')}:
+                <input type='text' value={ this.state.employee.position } placeholder={ this.state.employee.position } disabled={ this.state.disabled } name='position' onChange={ this.handleOnChange }></input>
+              </label>
+              <label className='employee-data-form_edit-label'>{t('editForm.experience')}:
+                <input type='text' value={ this.state.employee.experience } placeholder={ this.state.employee.experience}  name='experience' onChange={ this.handleOnChange }></input>
+              </label>
+              <label className='employee-data-form_edit-label'>{t('editForm.shortdescript')}:
+                <textarea className='employee-data-form_edit-description' type='text' value={ this.state.employee.shortdescript } placeholder={ this.state.employee.shortdescript } name='shortdescript' onChange={this.handleOnChange}></textarea>
+              </label>
+              <label className='employee-data-form_edit-label'>{t('editForm.longdescript')}:
+                <textarea className='employee-data-form_edit-description' type='text' value={ this.state.employee.longdescript } placeholder={ this.state.employee.longdescript } name='longdescript' onChange={this.handleOnChange}></textarea>
+              </label>
+            </fieldset>
+          </form>
+          <div className='row employee-data-form_buttons'>
+            <button className='btn btn-save' type='button' onClick={ this.handleOnClickUpdate }>{t('editForm.saveButton')}</button>
+            <button className='btn btn-cancel' type='button' onClick={ this.handleOnClickCancel }>{t('editForm.cancelButton')}</button>
+          </div>
+        </div>
+        <div className='row employee-data-form_alert-message' style={{ display: this.state.formAlertDisplay }}>{t('editForm.formAlert')}</div>
+        <div className='row employee-data-form_alert-message' style={{ display: this.state.formExperienceAlertDisplay }}>{t('editForm.formExperienceAlert')}</div>
+      </section>
     );
   }
 }
@@ -152,4 +147,4 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(withRouter(EmployeeEditForm));
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(translate('translations')(EmployeeEditForm)));

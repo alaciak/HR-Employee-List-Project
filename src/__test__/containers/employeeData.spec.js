@@ -7,8 +7,7 @@ import PropTypes from 'prop-types';
 
 describe('EmployeeData', () => {
 
-//ignored to make them pass after i18n support
-  xit('should render if the employee object is passed', () => {
+  it('should render if the employee object is passed', () => {
 
     const testEmployee = {
       id: 1,
@@ -26,7 +25,7 @@ describe('EmployeeData', () => {
       router: PropTypes.object
     };
 
-    const wrapper = shallow(<EmployeeData employee={ testEmployee }/>, { context });
+    const wrapper = shallow(<EmployeeData employee={ testEmployee } t={ key => key }/>, { context });
 
     expect(toJson(wrapper)).toMatchSnapshot();
 

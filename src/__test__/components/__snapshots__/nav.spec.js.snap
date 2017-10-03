@@ -11,34 +11,34 @@ exports[`Nav should render header and nav of the page 1`] = `
       className="row"
     >
       <div
-        className="navigation-logo col-6"
+        className="navigation-logo col-4"
       >
         HR 
         <span>
-          System
+          System 
         </span>
-         Management
+        Management
       </div>
+      <LanguageSelection />
       <div
-        className="col-6"
+        className="navigation-user col-6"
       >
-        <div
-          className="navigation-user"
-        >
-          Logged as:
-          <Provider
-            store={
-              Object {
-                "dispatch": [Function],
-                "getState": [Function],
-                "replaceReducer": [Function],
-                "subscribe": [Function],
-              }
+        <p>
+          loggedUser
+          :
+        </p>
+        <Provider
+          store={
+            Object {
+              "dispatch": [Function],
+              "getState": [Function],
+              "replaceReducer": [Function],
+              "subscribe": [Function],
             }
-          >
-            <Connect(UserTypeSelection) />
-          </Provider>
-        </div>
+          }
+        >
+          <Connect(UserTypeSelection) />
+        </Provider>
       </div>
     </div>
   </nav>

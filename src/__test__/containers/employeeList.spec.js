@@ -5,24 +5,22 @@ import toJson from 'enzyme-to-json';
 
 describe('EmployeesList', () => {
 
-//ignored to make them pass after i18n support
-  xit('should not render if the data are not fetched from the server', () => {
+  it('should not render if the data are not fetched from the server', () => {
 
     const wrapper = shallow(
-      <EmployeesList loading={ true }/>
+      <EmployeesList loading={ true } t={ key => key }/>
     );
 
     expect(toJson(wrapper)).toMatchSnapshot();
 
   });
 
-//ignored to make them pass after i18n support
-  xit('should render if the data are fetched from the server', () => {
+  it('should render if the data are fetched from the server', () => {
 
     const testEmployeeList = [{ id: 1, id: 2 }];
 
     const wrapper = shallow(
-      <EmployeesList loading={ false } employeeList= { testEmployeeList }/>
+      <EmployeesList loading={ false } employeeList= { testEmployeeList } t={ key => key }/>
     );
 
     expect(toJson(wrapper)).toMatchSnapshot();

@@ -12,15 +12,9 @@ export class LanguageSelection extends React.Component {
 
   handleOnClick = (i18n, language) => {
     i18n.changeLanguage(language);
-    if(language === 'en') {
-      this.setState({
-        selectedLanguage: 'en'
-      });
-    } else {
-      this.setState({
-        selectedLanguage: 'pl'
-      });
-    }
+    this.setState({
+      selectedLanguage: language
+    });
   }
 
   render() {

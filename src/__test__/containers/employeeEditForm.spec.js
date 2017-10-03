@@ -8,8 +8,7 @@ import PropTypes from 'prop-types';
 
 describe('EmployeeEditForm', () => {
 
-//ignored to make them pass after i18n support
-  xit('should render if the data are fetched from the server', () => {
+  it('should render if the data are fetched from the server', () => {
 
     const testEmployee = {
       id: 1,
@@ -28,7 +27,7 @@ describe('EmployeeEditForm', () => {
     };
 
     const wrapper = render(
-        <EmployeeEditForm employee={ testEmployee }/>,
+        <EmployeeEditForm employee={ testEmployee } t={ key => key }/>,
         { context }
     );
 

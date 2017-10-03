@@ -42358,7 +42358,7 @@ var EmployeesList = exports.EmployeesList = function (_React$Component) {
                         _react2.default.createElement(
                           'th',
                           null,
-                          t('employeeList.full-name')
+                          t('employeeList.fullname')
                         ),
                         _react2.default.createElement(
                           'th',

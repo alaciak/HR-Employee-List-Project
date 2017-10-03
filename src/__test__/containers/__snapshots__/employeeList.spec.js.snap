@@ -16,20 +16,20 @@ exports[`EmployeesList should render if the data are fetched from the server 1`]
         className="employee-list_table col-12"
       >
         <caption>
-          Employee List
+          employeeList.header
         </caption>
         <thead
           className="employee-list_table-heading"
         >
           <tr>
             <th>
-              Full Name
+              employeeList.fullname
             </th>
             <th>
-              Role
+              employeeList.role
             </th>
             <th>
-              Experience
+              employeeList.experience
             </th>
             <th />
           </tr>
@@ -37,7 +37,7 @@ exports[`EmployeesList should render if the data are fetched from the server 1`]
         <tbody
           className="employee-list_table-body"
         >
-          <Connect(withRouter(EmployeeData))
+          <Connect(withRouter(Translate(EmployeeData)))
             employee={
               Object {
                 "id": 2,
