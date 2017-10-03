@@ -19,9 +19,7 @@ exports[`Nav should render header and nav of the page 1`] = `
         </span>
         Management
       </div>
-      <I18n
-        ns="translations"
-      />
+      <Translate(LanguageSelection) />
       <div
         className="navigation-user col-6"
       >
