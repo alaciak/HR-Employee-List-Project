@@ -45,11 +45,14 @@
     "resolve-url-loader": "^2.1.0",
     "sass-loader": "^6.0.6",
     "style-loader": "^0.18.2",
+    "uglifyjs-webpack-plugin": "^0.4.6",
     "webpack": "^3.6.0",
     "webpack-dev-server": "^2.7.1"
   },
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "build": "webpack-dev-server",
+    "build:prod": "webpack -p"
   },
   "author": "",
   "license": "ISC"
