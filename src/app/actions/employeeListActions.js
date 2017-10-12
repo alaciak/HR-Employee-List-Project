@@ -18,7 +18,7 @@ export function removeEmployee(employeeId) {
   return dispatch => {
     return dispatch({
       type: 'REMOVE_EMPLOYEE',
-      payload: fetch(baseUrl + '/' + employeeId, { method: 'DELETE' })
-    }).then(() => dispatch(getList()));
+      payload: fetch(baseUrl + '/' + employeeId, { method: 'DELETE' }).then(() => employeeId)
+    });
   };
 }

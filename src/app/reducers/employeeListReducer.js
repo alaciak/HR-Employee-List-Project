@@ -13,6 +13,7 @@ export const employeeListReducer = (state = {
     case "REMOVE_EMPLOYEE_FULFILLED":
       state = {
         ...state,
+        employeeList: state.employeeList.filter(el => el.id !== action.payload),
         loading: false
       };
       break;
