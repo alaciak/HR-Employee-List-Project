@@ -25,7 +25,7 @@ node_modules\.bin\webpack-dev-server --hot
 ```
 in order to build the project on Linux:
 ``` bash
-./node_modules/.bin/webpack-dev-server -h
+./node_modules/.bin/webpack-dev-server --hot
 ```
 in order to run local backend server on Windows:
 ```bash
