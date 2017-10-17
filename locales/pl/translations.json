@@ -7,8 +7,8 @@
     "experienceData": "mies."
   },
   "loggedUser": "Zalogowany jako",
-  "errorMessage": "Wymaga uprawnieć administratora",
-    "successMessage": "Pracownik został usnięty z bazy",
+  "errorMessage": "Wymaga uprawnień administratora",
+    "successMessage": "Pracownik został usunięty z bazy",
   "editForm": {
     "header": "Dane Pracownika",
     "firstname": "Imię",
