@@ -35,7 +35,12 @@ export class EmployeesList extends React.Component {
       return null;
     } else {
       const employeeData = this.props.employeeList.map(employee => {
-        return <EmployeeData key={ employee.id } id={ employee.id } employee={ employee } handleOnClickErrorAlert={ this.handleShowErrorAlert } handleOnRemoveSuccessAlert={ this.handleShowSuccessAlert }/>
+        return <EmployeeData
+          key={ employee.id }
+          id={ employee.id }
+          employee={ employee }
+          handleOnClickErrorAlert={ this.handleShowErrorAlert }
+          handleOnRemoveSuccessAlert={ this.handleShowSuccessAlert }/>
       });
       return (
         <section className='employee-list'>
