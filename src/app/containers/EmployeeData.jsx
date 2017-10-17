@@ -4,6 +4,7 @@ import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { removeEmployee } from '../actions/employeeListActions';
 import { translate } from 'react-i18next';
+import AlertContainer from 'react-alert';
 
 export class EmployeeData extends React.Component {
   static propTypes = {
@@ -19,14 +20,7 @@ export class EmployeeData extends React.Component {
 
   onClickValidate () {
     if (this.props.userType === 'user' && (this.props.employee.position === 'Manager' || this.props.employee.position === 'Admin')) {
-      this.setState({
-        alertMessageDispaly: 'block',
-        timeoutId: setTimeout(() => {
-          this.setState({
-            alertMessageDispaly: 'none'
-          });
-        }, 3000)
-      });
+      this.props.handleOnClickErrorAlert();
       return false;
     }
     return true;
@@ -43,6 +37,7 @@ export class EmployeeData extends React.Component {
     e.stopPropagation();
     if(this.onClickValidate()) {
       this.props.removeEmployee(this.props.employee.id);
+      this.props.handleOnRemoveSuccessAlert();
     }
   }
 
@@ -60,7 +55,6 @@ export class EmployeeData extends React.Component {
         <td className='employee-data_remove'>
           <div onClick={ this.handleOnClickRemove }>X</div>
           <div className='employee-data employee-data_description'>{ this.props.employee.shortdescript }</div>
-          <div className='employee-data employee-data_allert-message' style={{ display: this.state.alertMessageDispaly }}><div className='employee-data_allert-message_image'></div><p>{t('errorMessage')}</p></div>
         </td>
       </tr>
     );

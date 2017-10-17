@@ -3,11 +3,30 @@ import EmployeeData from './EmployeeData.jsx';
 import { connect } from 'react-redux';
 import { getList } from '../actions/employeeListActions';
 import { translate } from 'react-i18next';
+import AlertContainer from 'react-alert';
 
 export class EmployeesList extends React.Component {
+  alertOptions = {
+  offset: 10,
+  position: 'bottom left',
+  theme: 'dark',
+  transition: 'scale'
+};
 
   componentDidMount() {
     this.props.getList();
+  }
+
+  handleShowErrorAlert = event => {
+    this.msg.error(this.props.t('errorMessage'), {
+      time: 3000
+    });
+  }
+
+  handleShowSuccessAlert = event => {
+    this.msg.success(this.props.t('successMessage'), {
+      time: 3000
+    });
   }
 
   render() {
@@ -16,7 +35,7 @@ export class EmployeesList extends React.Component {
       return null;
     } else {
       const employeeData = this.props.employeeList.map(employee => {
-        return <EmployeeData key={ employee.id } id={ employee.id } employee={ employee } />
+        return <EmployeeData key={ employee.id } id={ employee.id } employee={ employee } handleOnClickErrorAlert={ this.handleShowErrorAlert } handleOnRemoveSuccessAlert={ this.handleShowSuccessAlert }/>
       });
       return (
         <section className='employee-list'>
@@ -37,6 +56,9 @@ export class EmployeesList extends React.Component {
                 </tbody>
               </table>
             </div>
+          </div>
+          <div className='row employee-data employee-data_error-message'>
+            <AlertContainer ref={a => this.msg = a} {...this.alertOptions} />
           </div>
         </section>
       );

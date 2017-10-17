@@ -7,7 +7,8 @@
     "experienceData": "mies."
   },
   "loggedUser": "Zalogowany jako",
-  "errorMessage": "Tylko administrator może usunąć lub edytować tego pracownika",
+  "errorMessage": "Wymaga uprawnieć administratora",
+    "successMessage": "Pracownik został usnięty z bazy",
   "editForm": {
     "header": "Dane Pracownika",
     "firstname": "Imię",

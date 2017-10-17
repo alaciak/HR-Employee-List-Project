@@ -38,37 +38,4 @@
       display: block;
     }
   }
-  .employee-data_allert-message {
-    font-size: .7rem;
-    text-transform: uppercase;
-    color: map-get($font-colors, header);
-    position: absolute;
-    left: 1.5rem;
-    bottom: 1rem;
-    text-align: center;
-    background: map-get($background-colors, table-heading);
-    min-height: 2em;
-    width: 80%;
-    padding: .25rem;
-    border-radius: 5px;
-    .employee-data_allert-message_image {
-      background: url('../images/alert-icon.jpg') no-repeat center/contain;
-      width: 15%;
-      height: 2em;
-      float: left;
-    }
-    p {
-      width: 75%;
-      float: left;
-      text-align: center;
-    }
-    @media (min-width: 840px) and (orientation: landscape){
-      font-size: .9rem;
-      width: 50vw;
-    }
-    @media (min-width: 980px) and (orientation: landscape){
-      font-size: .7rem;
-      width: 30vw;
-    }
-  }
 }

@@ -23,7 +23,7 @@ describe('employeeListActions', () => {
     });
   });
 
-  it('should dispatch REMOVE_EMPLOYEE_PENDING, REMOVE_EMPLOYEE_FULFILLED, GET_LIST_PENDING and GET_LIST_FULFILLED when removing employee', () => {
+  it('should dispatch REMOVE_EMPLOYEE_PENDING and REMOVE_EMPLOYEE_FULFILLED when removing employee', () => {
     nock('http://localhost:3000/')
       .delete('/employees/1')
       .reply(200, { body: []});
@@ -31,7 +31,7 @@ describe('employeeListActions', () => {
       .get('/employees')
       .reply(200, { body: []});
 
-    const expectedActions = ['REMOVE_EMPLOYEE_PENDING', 'REMOVE_EMPLOYEE_FULFILLED', 'GET_LIST_PENDING', 'GET_LIST_FULFILLED'];
+    const expectedActions = ['REMOVE_EMPLOYEE_PENDING', 'REMOVE_EMPLOYEE_FULFILLED'];
     const store = mockStore({});
 
     store.dispatch(removeEmployee('1')).then().then(() => {

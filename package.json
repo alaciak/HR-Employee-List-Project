@@ -11,6 +11,7 @@
     "postcss-loader": "^2.0.6",
     "prop-types": "^15.5.10",
     "react": "^15.4.0",
+    "react-alert": "^2.4.0",
     "react-dom": "^15.4.0",
     "react-i18next": "^6.0.2",
     "react-redux": "^5.0.6",

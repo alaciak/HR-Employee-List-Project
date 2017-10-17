@@ -33,21 +33,6 @@ exports[`EmployeeData should render if the employee object is passed 1`] = `
     >
       testShortdescript
     </div>
-    <div
-      className="employee-data employee-data_allert-message"
-      style={
-        Object {
-          "display": "none",
-        }
-      }
-    >
-      <div
-        className="employee-data_allert-message_image"
-      />
-      <p>
-        errorMessage
-      </p>
-    </div>
   </td>
 </tr>
 `;
