@@ -166,36 +166,6 @@ video {
     left: 5.5em; }
   .employee-data:hover .employee-data_description {
     display: block; }
-  .employee-data .employee-data_allert-message {
-    font-size: .7rem;
-    text-transform: uppercase;
-    color: #fff;
-    position: absolute;
-    left: 1.5rem;
-    bottom: 1rem;
-    text-align: center;
-    background: #3d3a39;
-    min-height: 2em;
-    width: 80%;
-    padding: .25rem;
-    border-radius: 5px; }
-    .employee-data .employee-data_allert-message .employee-data_allert-message_image {
-      background: url(../../dist/img/alert-icon.jpg) no-repeat center/contain;
-      width: 15%;
-      height: 2em;
-      float: left; }
-    .employee-data .employee-data_allert-message p {
-      width: 75%;
-      float: left;
-      text-align: center; }
-    @media (min-width: 840px) and (orientation: landscape) {
-      .employee-data .employee-data_allert-message {
-        font-size: .9rem;
-        width: 50vw; } }
-    @media (min-width: 980px) and (orientation: landscape) {
-      .employee-data .employee-data_allert-message {
-        font-size: .7rem;
-        width: 30vw; } }
 
 .employee-data-form {
   padding: 2em; }

@@ -41,10 +41,6 @@ export class EmployeeData extends React.Component {
     }
   }
 
-  componentWillUnmount() {
-    clearTimeout(this.state.timeoutId);
-  }
-
   render() {
     const { t } = this.props;
     return (
